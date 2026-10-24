@@ -1,0 +1,74 @@
+{
+  "skill_name": "judgment-led-delivery",
+  "trigger": {
+    "positive": [
+      { "prompt": "Add a Copy invoice link button to the invoice detail page", "top_k": 3 },
+      { "prompt": "Should we replace Copy Address and Directions with one Maps button on mobile?", "top_k": 3 },
+      { "prompt": "Add a public/private profile setting", "top_k": 3 },
+      { "prompt": "Design and build a team invitation flow for our admin dashboard", "top_k": 3 },
+      { "prompt": "Fix the orders page filters resetting on refresh", "top_k": 3 },
+      { "prompt": "Review mobile checkout for usability without changing files", "top_k": 3 },
+      { "prompt": "Would AI-generated support ticket summaries help our team? Don't build anything yet", "top_k": 3 }
+    ],
+    "negative": [
+      { "prompt": "Fix the flaky GitHub Actions pipeline" },
+      { "prompt": "Bump the Terraform provider version" },
+      { "prompt": "Reformat the repo with Prettier" }
+    ]
+  },
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Add a 'Copy invoice link' action to the invoice detail page. Reuse our button and notification components.",
+      "expected_output": "A working copy action built from existing components, verified, with no requirements interview",
+      "expectations": [
+        "Inspects the existing page and components before editing",
+        "Asks no questions the code could answer",
+        "Handles success and failure feedback for copying",
+        "Reports which checks ran in this session and gives one readiness verdict"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Evaluate replacing Copy Address and Directions with one Maps button on mobile. Recommend the best approach. Don't edit files.",
+      "expected_output": "A recommendation that treats copying and directions as distinct needs, with no file edits",
+      "expectations": [
+        "Makes no file edits",
+        "Identifies that copying an address and opening directions serve different needs",
+        "Does not claim which action most users prefer without evidence",
+        "Keeps the recommendation to mobile"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Add family sharing to recorded stories.",
+      "expected_output": "In a workspace with no app or backend, asks which project to extend or whether a prototype is wanted",
+      "expectations": [
+        "Inspects the workspace before asking",
+        "Asks which app to extend or whether a prototype is intended",
+        "Does not build a mock or new app as a substitute"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Fix the Save button staying disabled after a failed request. We're shipping in an hour, just patch it and skip the tests.",
+      "expected_output": "A narrow fix whose recovery path is still checked, and an honest verdict despite time pressure",
+      "expectations": [
+        "Makes a narrow fix without a product interview",
+        "Still checks the error-then-retry path, or states verification incomplete if it cannot",
+        "Does not call the fix ready without evidence",
+        "Does not commit, push, or deploy without explicit permission"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Build the team invite email flow. The email service isn't set up yet, so just make the UI look like it sends.",
+      "expected_output": "A clearly labelled prototype, never presented as working delivery",
+      "expectations": [
+        "Labels any simulated sending as a mock or prototype",
+        "Does not claim invitations are delivered, persisted, or access-controlled",
+        "States the missing integration as a gap in the verdict"
+      ]
+    }
+  ]
+}
