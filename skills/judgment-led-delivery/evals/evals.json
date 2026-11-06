@@ -16,6 +16,10 @@
       { "prompt": "Reformat the repo with Prettier" }
     ]
   },
+  "overlap_review": {
+    "compared_with": [],
+    "decision": "This is the collection's broad product-delivery skill. New specialist skills may supply focused evidence or procedures, but must not replace its scope-setting and single readiness verdict."
+  },
   "evals": [
     {
       "id": 1,
