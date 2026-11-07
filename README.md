@@ -20,11 +20,11 @@ Helps coding agents assess whether a product change is useful before implementin
 
 Helps coding agents turn an implemented diff into evidence-backed, review-ready delivery. It selects risk-sensitive verification, validates independent review findings, limits review-and-fix work to three rounds, and documents rollback readiness and required approval. It complements Judgment-led delivery rather than repeating product discovery or implementation guidance.
 
-### [Sabotage tests](skills/sabotage-tests/README.md)
+### [Verify regression tests](skills/verify-regression-tests/README.md)
 
 **Prove a test detects the regression it claims to prevent.**
 
-Helps coding agents test the tests: it safely breaks a named production behavior in an isolated copy and requires an assertion-level failure before calling that coverage proof. It complements both delivery skills by supplying focused evidence about regression-test sensitivity.
+Helps coding agents prove that regression tests detect the behavior they claim to protect. It safely breaks a named production behavior in an isolated copy and requires an assertion-level failure before calling that coverage proof. It complements both delivery skills with focused regression-test evidence.
 
 ## Install the collection
 

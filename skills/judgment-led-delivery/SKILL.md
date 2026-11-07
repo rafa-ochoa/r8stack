@@ -32,7 +32,7 @@ This skill sets the depth: how much to ask, what counts as done, and what the ve
 - **Interview or requirements skills:** if one says to always interview, this skill's rule wins unless the user asked to be interviewed. Ask only about user-owned decisions that tools cannot resolve.
 - **Planning or spec skills:** use them only when the work is large or ambiguous enough to need a written plan. Do not create a spec for a clear, small change.
 - **Verified delivery:** use it after implementation when the diff needs risk-sensitive execution evidence, independent review, rollback assessment, or a PR handoff. It does not reopen product decisions; treat its evidence as input to this skill's user-journey verdict.
-- **Sabotage tests:** use it when a new or changed regression test needs proof that its assertion detects the claimed failure. It verifies test sensitivity, not product scope or overall readiness.
+- **Verify regression tests:** use it when a new or changed regression test needs proof that its assertion detects the claimed failure. It verifies test protection, not product scope or overall readiness.
 - **Other code review or quality skills:** they judge the diff; this skill also judges whether the user journey works, and gives the one readiness verdict.
 
 ## Clarify automatically, only when needed

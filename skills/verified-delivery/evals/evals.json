@@ -14,8 +14,8 @@
     ]
   },
   "overlap_review": {
-    "compared_with": ["judgment-led-delivery", "sabotage-tests"],
-    "decision": "verified-delivery establishes risk-sensitive, implementation-level evidence after a change. judgment-led-delivery owns product scope and user-journey readiness; sabotage-tests supplies focused proof that a named regression test is sensitive."
+    "compared_with": ["judgment-led-delivery", "verify-regression-tests"],
+    "decision": "verified-delivery establishes risk-sensitive, implementation-level evidence after a change. judgment-led-delivery owns product scope and user-journey readiness; verify-regression-tests supplies focused proof that a named regression test detects its protected behavior."
   },
   "evals": [
     {

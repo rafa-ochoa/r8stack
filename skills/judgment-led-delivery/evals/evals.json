@@ -17,8 +17,8 @@
     ]
   },
   "overlap_review": {
-    "compared_with": ["verified-delivery", "sabotage-tests"],
-    "decision": "This is the collection's broad product-delivery skill. verified-delivery supplies implementation and release evidence after a change; sabotage-tests proves the sensitivity of named regression tests. Neither replaces this skill's product scope-setting or user-journey verdict."
+    "compared_with": ["verified-delivery", "verify-regression-tests"],
+    "decision": "This is the collection's broad product-delivery skill. verified-delivery supplies implementation and release evidence after a change; verify-regression-tests proves that named regression tests detect their protected behavior. Neither replaces this skill's product scope-setting or user-journey verdict."
   },
   "evals": [
     {

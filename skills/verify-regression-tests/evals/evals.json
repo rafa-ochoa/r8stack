@@ -1,5 +1,5 @@
 {
-  "skill_name": "sabotage-tests",
+  "skill_name": "verify-regression-tests",
   "trigger": {
     "positive": [
       { "prompt": "Prove this new save test actually fails if persistence stops working." },
@@ -13,7 +13,7 @@
   },
   "overlap_review": {
     "compared_with": ["judgment-led-delivery", "verified-delivery"],
-    "decision": "sabotage-tests verifies whether tests detect a named regression. judgment-led-delivery owns product scope and the user journey; verified-delivery owns risk-sensitive delivery evidence and review readiness. Either may use sabotage results as focused test-quality evidence."
+    "decision": "verify-regression-tests proves whether tests detect a named regression. judgment-led-delivery owns product scope and the user journey; verified-delivery owns risk-sensitive delivery evidence and review readiness. Either may use this proof as focused test-quality evidence."
   },
   "evals": [
     {

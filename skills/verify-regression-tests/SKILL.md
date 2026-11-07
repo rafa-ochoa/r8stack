@@ -1,10 +1,10 @@
 ---
-name: sabotage-tests
-description: "Prove new or changed tests detect real regressions by breaking the covered production behavior in an isolated copy and observing an assertion-level failure. Use when writing, changing, or reviewing tests; when tests mock project-owned code; or when asked whether tests actually catch important bugs. Not for ordinary feature implementation, generic code review, or chasing a coverage percentage."
+name: verify-regression-tests
+description: "Prove new or changed regression tests detect real regressions by breaking the covered production behavior in an isolated copy and observing an assertion-level failure. Use when writing, changing, or reviewing regression tests; when tests mock project-owned code; or when asked whether tests actually catch important bugs. Not for ordinary feature implementation, generic code review, or chasing a coverage percentage."
 license: MIT
 ---
 
-# Sabotage tests
+# Verify regression tests
 
 A test that passes against working code is a claim. A test that fails for the expected assertion after the protected behavior is broken is evidence. Use this skill to establish that evidence without damaging the project, production data, or another person's work.
 
@@ -14,7 +14,7 @@ A test that passes against working code is a claim. A test that fails for the ex
 - Do not mock project-owned modules, hooks, stores, components, or services merely to make a test easier. Replace them with the real code and a narrow boundary fake.
 - Do not run a sabotage against production, deployed environments, payment systems, user data, or an external side effect. Use local safe data and a scratch copy of the project whenever possible.
 - Do not alter source code, delete tests, relax assertions, or change coverage thresholds just to turn a missed sabotage into a pass. Strengthen the test or report the gap.
-- This skill verifies tests. It does not own feature scope, implementation, rollback planning, or the overall readiness verdict; use `judgment-led-delivery` for product scope and `verified-delivery` for risk-sensitive delivery evidence.
+- This skill verifies regression tests. It does not own feature scope, implementation, rollback planning, or the overall readiness verdict; use `judgment-led-delivery` for product scope and `verified-delivery` for risk-sensitive delivery evidence.
 - Report sabotage results as **caught**, **missed**, **inconclusive**, or **untestable**. A caught sabotage is focused test-quality evidence, not authorization to merge, deploy, or make an external change.
 
 ## 1. Define the proof claim
