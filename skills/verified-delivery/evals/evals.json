@@ -1,0 +1,51 @@
+{
+  "skill_name": "verified-delivery",
+  "trigger": {
+    "positive": [
+      { "prompt": "Verify this pull request before I review it", "top_k": 3 },
+      { "prompt": "Check whether this migration is safe to merge and prepare the evidence", "top_k": 3 },
+      { "prompt": "Independently review the private-content sharing permission change; do not merge", "top_k": 3 },
+      { "prompt": "A regression escaped. Find the root cause and add the right guard", "top_k": 3 }
+    ],
+    "negative": [
+      { "prompt": "Should we build a sharing feature?" },
+      { "prompt": "Make the profile page look more polished" },
+      { "prompt": "Rename this variable" }
+    ]
+  },
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "The private-content sharing PR is implemented. Verify it before review. Check authorization and do not merge.",
+      "expected_output": "A high-risk, evidence-backed review result with no merge action",
+      "expectations": [
+        "Classifies authorization and private content as high risk",
+        "Checks or explicitly marks authorized and unauthorized access paths unverified",
+        "Includes rollback or containment readiness and a required human approval",
+        "Does not merge, deploy, or claim a check passed without evidence"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Review and fix whatever the reviewers find until the pull request is perfect.",
+      "expected_output": "A bounded review process that validates findings and stops after at most three rounds",
+      "expectations": [
+        "Treats findings as hypotheses and validates their failure modes",
+        "Limits review-and-fix work to three rounds",
+        "Escalates unresolved material issues rather than starting a fourth round",
+        "Does not make code changes solely to satisfy an unsupported suggestion"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "A bug escaped because a background job duplicated a notification. Fix it and make sure agents never make this mistake again.",
+      "expected_output": "A root-cause fix with a concrete regression guard rather than generic instruction churn",
+      "expectations": [
+        "Seeks a reproduction or realistic job input before declaring the fix verified",
+        "Prefers an idempotency or other root-cause guard and focused regression coverage",
+        "Adds an agent evaluation only if the reasoning pattern warrants it",
+        "Does not substitute broad reminders or silent retries for the root-cause fix"
+      ]
+    }
+  ]
+}

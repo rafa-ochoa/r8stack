@@ -2,7 +2,7 @@
 
 **A collection of reusable Agent Skills for coding agents.**
 
-This repository brings together focused instruction packages for tools such as Codex and Claude Code. Each skill is independently installable: explore the catalog below, choose one, or install the full collection. The collection starts with one skill, Judgment-led delivery, and we'll keep adding more over time.
+This repository brings together focused instruction packages for tools such as Codex and Claude Code. Each skill is independently installable: explore the catalog below, choose one, or install the full collection.
 
 ## Skills in this collection
 
@@ -13,6 +13,12 @@ This repository brings together focused instruction packages for tools such as C
 **Build what's worth building. Know when not to.**
 
 Helps coding agents assess whether a product change is useful before implementing it. The skill examines existing behavior, weighs meaningful alternatives, builds working interactions when appropriate, and verifies the user experience against actual evidence. It adapts to the task instead of requiring a heavyweight process.
+
+### [Verified delivery](skills/verified-delivery/README.md)
+
+**Prove a change works before asking someone to merge it.**
+
+Helps coding agents turn an implemented diff into evidence-backed, review-ready delivery. It selects risk-sensitive verification, validates independent review findings, limits review-and-fix work to three rounds, and documents rollback readiness and required approval. It complements Judgment-led delivery rather than repeating product discovery or implementation guidance.
 
 ## Install the collection
 
