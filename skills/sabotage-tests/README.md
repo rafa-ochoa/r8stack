@@ -14,7 +14,7 @@ Install this skill for Codex and Claude Code:
 npx skills add rafa-ochoa/r8a-skills --skill sabotage-tests -g -a codex -a claude-code -y
 ```
 
-Remove `-g` for a project-only installation. After the skill is merged, update it with:
+Remove `-g` for a project-only installation. Already installed? Update it with:
 
 ```bash
 npx skills update sabotage-tests -g -y

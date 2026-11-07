@@ -14,7 +14,8 @@ A test that passes against working code is a claim. A test that fails for the ex
 - Do not mock project-owned modules, hooks, stores, components, or services merely to make a test easier. Replace them with the real code and a narrow boundary fake.
 - Do not run a sabotage against production, deployed environments, payment systems, user data, or an external side effect. Use local safe data and a scratch copy of the project whenever possible.
 - Do not alter source code, delete tests, relax assertions, or change coverage thresholds just to turn a missed sabotage into a pass. Strengthen the test or report the gap.
-- This skill verifies tests. It does not own feature scope, implementation, or the overall readiness verdict; use `judgment-led-delivery` for those decisions.
+- This skill verifies tests. It does not own feature scope, implementation, rollback planning, or the overall readiness verdict; use `judgment-led-delivery` for product scope and `verified-delivery` for risk-sensitive delivery evidence.
+- Report sabotage results as **caught**, **missed**, **inconclusive**, or **untestable**. A caught sabotage is focused test-quality evidence, not authorization to merge, deploy, or make an external change.
 
 ## 1. Define the proof claim
 

@@ -20,6 +20,12 @@ Helps coding agents assess whether a product change is useful before implementin
 
 Helps coding agents turn an implemented diff into evidence-backed, review-ready delivery. It selects risk-sensitive verification, validates independent review findings, limits review-and-fix work to three rounds, and documents rollback readiness and required approval. It complements Judgment-led delivery rather than repeating product discovery or implementation guidance.
 
+### [Sabotage tests](skills/sabotage-tests/README.md)
+
+**Prove a test detects the regression it claims to prevent.**
+
+Helps coding agents test the tests: it safely breaks a named production behavior in an isolated copy and requires an assertion-level failure before calling that coverage proof. It complements both delivery skills by supplying focused evidence about regression-test sensitivity.
+
 ## Install the collection
 
 Install **all skills** in this repository globally for Codex and Claude Code:

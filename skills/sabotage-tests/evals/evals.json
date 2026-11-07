@@ -12,8 +12,8 @@
     ]
   },
   "overlap_review": {
-    "compared_with": ["judgment-led-delivery"],
-    "decision": "sabotage-tests verifies whether tests detect a named regression. judgment-led-delivery owns product scope, implementation, and the overall readiness verdict; it may use sabotage-tests as evidence for test quality."
+    "compared_with": ["judgment-led-delivery", "verified-delivery"],
+    "decision": "sabotage-tests verifies whether tests detect a named regression. judgment-led-delivery owns product scope and the user journey; verified-delivery owns risk-sensitive delivery evidence and review readiness. Either may use sabotage results as focused test-quality evidence."
   },
   "evals": [
     {

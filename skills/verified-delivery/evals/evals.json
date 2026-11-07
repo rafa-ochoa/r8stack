@@ -13,6 +13,10 @@
       { "prompt": "Rename this variable" }
     ]
   },
+  "overlap_review": {
+    "compared_with": ["judgment-led-delivery", "sabotage-tests"],
+    "decision": "verified-delivery establishes risk-sensitive, implementation-level evidence after a change. judgment-led-delivery owns product scope and user-journey readiness; sabotage-tests supplies focused proof that a named regression test is sensitive."
+  },
   "evals": [
     {
       "id": 1,

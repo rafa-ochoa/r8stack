@@ -18,6 +18,11 @@ Apply this skill **after implementation** or to assess an existing diff. Its job
 - Stay within authority. Preparing commits or a PR requires explicit permission; merging, deploying, publishing, changing data, or changing access always requires explicit permission. A passing result is not approval.
 - Stop when the evidence supports the requested decision, a blocker needs an owner, or the review has converged. Do not create agents, tickets, tools, or broad refactors merely to follow this workflow.
 
+## Interaction with other skills
+
+- **Judgment-led delivery** owns whether the requested user outcome is worth building and whether the complete journey is ready. Use this skill after implementation to supply evidence about the diff, then return that evidence without reopening product scope.
+- **Sabotage tests** proves that a specific new or changed test detects its named regression. Use it when test sensitivity is material; incorporate its result as verification evidence rather than treating it as an overall release verdict.
+
 ## 1. Establish the verification target
 
 State the requested behavior, the changed surface, acceptance criteria, and plausible regressions. Identify the effective code paths rather than trusting filenames alone. Select the smallest evidence that can falsify the important claims.
