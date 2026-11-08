@@ -21,7 +21,7 @@ Apply this skill **after implementation** or to assess an existing diff. Its job
 ## Interaction with other skills
 
 - **Judgment-led delivery** owns whether the requested user outcome is worth building and whether the complete journey is ready. Use this skill after implementation to supply evidence about the diff, then return that evidence without reopening product scope.
-- **Verify regression tests** proves that a specific new or changed test detects its named regression. Use it when regression-test proof is material; incorporate its result as verification evidence rather than treating it as an overall release verdict.
+- **Verify regression tests** proves that a named regression test detects the behavior it protects. Use it when regression-test proof is material; incorporate its result as verification evidence rather than treating it as an overall release verdict.
 
 ## 1. Establish the verification target
 
