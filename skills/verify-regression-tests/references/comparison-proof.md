@@ -28,7 +28,3 @@ Afterward, remove only the temporary change and verify:
 ## Browser and server targets
 
 Do not assume a documented port is current. Use test configuration, startup output, or the running process to find the actual target, then verify that target before rerunning. Report the corrected target and what the rerun proved. A stale-port connection failure is an environment result, not evidence about the regression.
-
-## Optional skill evaluation comparison
-
-When an evaluation runner can control selection mode, compare the same scenario with the skill absent, automatically selected, and explicitly invoked. Keep model, prompt, fixture, and tools fixed. Score activation separately from behavior; label unavailable modes and do not infer a comparison that was not run.

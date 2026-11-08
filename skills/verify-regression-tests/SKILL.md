@@ -1,6 +1,6 @@
 ---
 name: verify-regression-tests
-description: "Prove that a named regression test detects the specific behavior it protects. Use when writing, changing, or reviewing regression tests; when tests mock project-owned code; or when asked whether a test catches an important bug. It compares the unchanged test against working behavior and a faithfully broken version, requiring the intended assertion failure. Not for ordinary feature implementation, generic code review, or chasing coverage."
+description: "Prove that a named regression test detects the specific behavior it protects. Use when asked to prove that a new, changed, or existing regression test catches its bug; when reviewing tests that mock project-owned code; or when asked whether a test catches an important bug. It compares the unchanged test against working behavior and a faithfully broken version, requiring the intended assertion failure. Not for writing tests as part of ordinary feature work, generic code review, or chasing coverage."
 license: MIT
 ---
 

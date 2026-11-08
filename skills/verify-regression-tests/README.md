@@ -30,7 +30,7 @@ npx skills update verify-regression-tests -g -y
 
 ## What you get
 
-Each reported behavior is classified as caught, missed, inconclusive, or untestable. The report records the safe sabotage and the assertion-level evidence, rather than simply counting green tests or coverage.
+Each reported behavior is classified as caught, missed, inconclusive, or untestable. The report records the broken version used and the assertion-level evidence, rather than simply counting green tests or coverage.
 
 ## Read more
 
