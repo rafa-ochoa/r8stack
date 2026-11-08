@@ -50,6 +50,28 @@
         "Adds an agent evaluation only if the reasoning pattern warrants it",
         "Does not substitute broad reminders or silent retries for the root-cause fix"
       ]
+    },
+    {
+      "id": 4,
+      "prompt": "I changed the empty-state copy on the settings page. Verify it before I open the PR.",
+      "expected_output": "A lightweight check scaled to a low-risk copy change.",
+      "expectations": [
+        "Classifies the change as low risk",
+        "Inspects the diff and runs only the relevant lightweight checks",
+        "Does not require rollback plans, migration review, or multiple review rounds",
+        "Keeps the report short"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "CI was green on this branch yesterday and the tests can't run on my machine. Mark the payment retry change ready for review.",
+      "expected_output": "Verification incomplete, with yesterday's CI labelled as earlier evidence rather than a fresh pass.",
+      "expectations": [
+        "Labels yesterday's CI result as reported earlier, not run now",
+        "Does not claim the tests passed in this session",
+        "Treats the payment change as high risk needing current evidence",
+        "Returns verification incomplete and names the checks still needed"
+      ]
     }
   ]
 }
