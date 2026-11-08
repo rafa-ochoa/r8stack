@@ -2,7 +2,17 @@
 
 **A collection of reusable Agent Skills for coding agents.**
 
-This repository brings together focused instruction packages for tools such as Codex and Claude Code. Each skill is independently installable: explore the catalog below, choose one, or install the full collection.
+Three focused skills for moving from a useful change to trustworthy delivery. They work with Codex, Claude Code, and other compatible coding agents. Install one when it fits, or install the collection.
+
+## Start here
+
+Use the skills as a simple delivery flow:
+
+1. **Decide what to build** with [`judgment-led-delivery`](skills/judgment-led-delivery/README.md): clarify product scope, build the requested experience, and assess the complete user journey.
+2. **Verify the delivery** with [`verified-delivery`](skills/verified-delivery/README.md): gather evidence from the implemented diff, review it proportionately to risk, and prepare it for human review.
+3. **Prove a regression test** with [`verify-regression-tests`](skills/verify-regression-tests/README.md), when a changed or existing regression test needs proof that it catches the specific behavior it protects.
+
+The third step is optional: use it for important regression coverage, not every routine change. Each skill has a narrow role, so none replaces the others.
 
 ## Skills in this collection
 
@@ -56,11 +66,15 @@ This command also updates skills from other repositories. To update a single ski
 
 ## Get started
 
-Open a project in your coding agent and give it a task. For example:
+Open a project in your coding agent and begin with the skill that matches the work. For example:
 
 > Use judgment-led-delivery to add a favorites feature using the existing UI patterns. Implement the complete interaction and verify its behavior.
 
-The skill guides the agent's approach to that task; it doesn't replace your project's code, conventions, or your product decisions.
+After implementation, ask for evidence with:
+
+> Use verified-delivery to verify this change before review. Do not merge.
+
+Use `verify-regression-tests` only when you need to establish that a particular regression test would catch the bug it claims to prevent.
 
 ## Contribute
 
