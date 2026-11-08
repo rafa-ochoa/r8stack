@@ -6,7 +6,7 @@ Read this reference when the three-run comparison is blocked, fails unexpectedly
 
 Keep the test command, test file, fixtures, test data, and relevant configuration constant. Change only the production behavior needed to recreate the specific defect. Record every material failed attempt: what changed, the outcome, and what the next run established.
 
-Use a revision that contains the defect when one faithfully reproduces it. Otherwise make the smallest runnable production change in an isolated worktree or fixture. A syntax error, missing import, changed test setup, or stopped server is not a faithful comparison with the broken version.
+Use a revision that contains the defect only when the test file, fixtures, test data, and relevant configuration are identical to the working run. Otherwise copy those fixed inputs into an isolated worktree or fixture and make the smallest runnable production change that recreates the defect. A syntax error, missing import, changed test setup, or stopped server is not a faithful comparison with the broken version.
 
 Afterward, remove only the temporary change and verify:
 
