@@ -104,6 +104,7 @@ function validateOverlapReview(evaluation, evaluationFilePath, catalogPath, viol
   const evaluationPath = toCatalogPath(evaluationFilePath, catalogPath);
   const overlapReview = evaluation.overlap_review;
   const hasComparedSkills = Array.isArray(overlapReview?.compared_with)
+    && overlapReview.compared_with.length > 0
     && overlapReview.compared_with.every(skillName => typeof skillName === 'string' && skillName.length > 0);
   const hasDecision = typeof overlapReview?.decision === 'string' && overlapReview.decision.trim().length > 0;
 

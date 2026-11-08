@@ -99,3 +99,15 @@ test('rejects a skill without a documented overlap decision', async () => {
     'skills/example-skill/evals/evals.json must include overlap_review.compared_with and overlap_review.decision'
   ]);
 });
+
+test('rejects an overlap review that names no compared skills', async () => {
+  const evaluation = structuredClone(validEvaluation);
+  evaluation.overlap_review.compared_with = [];
+  const catalogPath = await createCatalog(evaluation);
+
+  const violations = await validateSkillEvaluations(catalogPath);
+
+  assert.deepEqual(violations, [
+    'skills/example-skill/evals/evals.json must include overlap_review.compared_with and overlap_review.decision'
+  ]);
+});
