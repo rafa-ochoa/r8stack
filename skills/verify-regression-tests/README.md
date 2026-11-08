@@ -1,5 +1,7 @@
 # Verify regression tests
 
+![Verify regression tests: Working, Known-bad, Restored](cover.svg)
+
 **Prove a regression test detects the behavior it claims to protect.**
 
 `verify-regression-tests` compares one unchanged regression test against working, faithfully known-bad, and restored behavior. It requires the expected assertion failure—not merely any failure—before calling the test proven.

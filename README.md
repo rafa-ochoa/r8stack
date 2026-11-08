@@ -16,11 +16,15 @@ Helps coding agents assess whether a product change is useful before implementin
 
 ### [Verified delivery](skills/verified-delivery/README.md)
 
+![Verified delivery: Establish, Verify, Review, Release](skills/verified-delivery/cover.svg)
+
 **Prove a change works before asking someone to merge it.**
 
 Helps coding agents turn an implemented diff into evidence-backed, review-ready delivery. It selects risk-sensitive verification, validates independent review findings, limits review-and-fix work to three rounds, and documents rollback readiness and required approval. It complements Judgment-led delivery rather than repeating product discovery or implementation guidance.
 
 ### [Verify regression tests](skills/verify-regression-tests/README.md)
+
+![Verify regression tests: Working, Known-bad, Restored](skills/verify-regression-tests/cover.svg)
 
 **Prove a test detects the regression it claims to prevent.**
 

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-labelledby="title description">
+  <title id="title">Verify regression tests: working, known-bad, restored</title>
+  <desc id="description">A three-run comparison that proves a regression test catches the behavior it protects.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#101426"/><stop offset="100%" stop-color="#080c18"/></linearGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#a786ff"/><stop offset="50%" stop-color="#f692c8"/><stop offset="100%" stop-color="#65dfd6"/></linearGradient>
+    <radialGradient id="glow"><stop offset="0%" stop-color="#f692c8" stop-opacity=".22"/><stop offset="100%" stop-color="#f692c8" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#background)"/>
+  <circle cx="1050" cy="105" r="345" fill="url(#glow)"/><circle cx="145" cy="535" r="250" fill="url(#glow)" opacity=".3"/>
+  <path d="M62 38h1076M62 590h1076" stroke="#64708c" stroke-opacity=".28"/>
+  <text x="62" y="88" fill="#f5c9de" font-size="23" font-family="Arial,Helvetica,sans-serif" letter-spacing="1" font-weight="700">r8a-skills</text>
+  <text x="1138" y="88" fill="#c3ccdf" text-anchor="end" font-size="15" font-family="Arial,Helvetica,sans-serif" letter-spacing="2" font-weight="700">03 / REGRESSION PROOF</text>
+  <text x="62" y="167" fill="#ffffff" font-size="56" font-family="Arial,Helvetica,sans-serif" font-weight="800" letter-spacing="-1.8">Verify regression tests</text>
+  <text x="64" y="210" fill="#bcc7dd" font-size="23" font-family="Arial,Helvetica,sans-serif">A green test is a claim. The intended failure is evidence.</text>
+  <g stroke-width="1.8">
+    <rect x="60" y="260" width="330" height="238" rx="22" fill="#193439" stroke="#71dbce" stroke-opacity=".7"/>
+    <rect x="435" y="260" width="330" height="238" rx="22" fill="#38253c" stroke="#ffabcb" stroke-opacity=".7"/>
+    <rect x="810" y="260" width="330" height="238" rx="22" fill="#222441" stroke="#a992ff" stroke-opacity=".7"/>
+  </g>
+  <g><circle cx="98" cy="304" r="20" fill="#81e1d2"/><circle cx="473" cy="304" r="20" fill="#ffabcb"/><circle cx="848" cy="304" r="20" fill="#a992ff"/></g>
+  <g fill="#151827" font-family="Arial,Helvetica,sans-serif" font-weight="800" font-size="20" text-anchor="middle"><text x="98" y="311">1</text><text x="473" y="311">2</text><text x="848" y="311">3</text></g>
+  <g fill="#ffffff" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="800"><text x="83" y="376">WORKING</text><text x="458" y="376">KNOWN-BAD</text><text x="833" y="376">RESTORED</text></g>
+  <g fill="#dce2f0" font-family="Arial,Helvetica,sans-serif" font-size="19"><text x="83" y="417">Same test</text><text x="83" y="445">PASS</text><text x="458" y="417">Expected assertion</text><text x="458" y="445">FAIL</text><text x="833" y="417">Same test</text><text x="833" y="445">PASS</text></g>
+  <g fill="none" stroke="#d4dcf3" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M395 380h33m-12-10 12 10-12 10"/><path d="M770 380h33m-12-10 12 10-12 10"/></g>
+  <path d="M1010 517 Q603 574 192 517" fill="none" stroke="url(#edge)" stroke-width="3" stroke-dasharray="9 9" stroke-linecap="round"/>
+  <text x="602" y="558" text-anchor="middle" fill="#c9d2e7" font-size="17" font-family="Arial,Helvetica,sans-serif" letter-spacing="2.6" font-weight="700">COMPARE · CONFIRM · CLEAN UP</text>
+</svg>

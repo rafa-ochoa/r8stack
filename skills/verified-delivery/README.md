@@ -1,5 +1,7 @@
 # Verified delivery
 
+![Verified delivery: Establish, Verify, Review, Release](cover.svg)
+
 **Prove a change works before asking someone to merge it.**
 
 Verified delivery takes an implemented diff through proportionate verification, independent review, bounded convergence, and review-ready reporting. It is designed for any project, including sensitive flows such as private content, sharing permissions, and migrations.
