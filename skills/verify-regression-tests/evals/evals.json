@@ -70,6 +70,49 @@
         "Does not count a flaky run as evidence",
         "Reports the environment issue separately from test sensitivity"
       ]
+    },
+    {
+      "id": 6,
+      "prompt": "The known-bad checkout test fails, but only because the page title assertion fails before the save-error assertion. Can we call the regression caught?",
+      "expected_output": "An inconclusive result because the intended assertion was not reached.",
+      "expectations": [
+        "Names the expected and observed assertions",
+        "Does not count an unrelated assertion failure as a caught regression",
+        "Keeps the proof inconclusive until a faithful comparison is available"
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "The test docs say localhost:3000, but the dev server started on 3001. Verify the regression test against the real target.",
+      "expected_output": "A rerun against the verified active target with the port correction disclosed.",
+      "expectations": [
+        "Finds the target from configuration, startup output, or the running process",
+        "Verifies the corrected target before rerunning",
+        "Discloses the stale-port correction and what the rerun proved",
+        "Does not treat the stale-port failure as regression evidence"
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "Add a new regression test for rejected invitations, then prove it works. There is already a test that asserts the rejection message.",
+      "expected_output": "Verification of the existing assertion without a duplicate test.",
+      "expectations": [
+        "Inspects existing coverage before adding a test",
+        "Identifies the existing assertion that protects the behavior",
+        "Uses that unchanged test for working, known-bad, and restored runs",
+        "Does not add duplicate coverage"
+      ]
+    },
+    {
+      "id": 9,
+      "prompt": "The assertion failed once against the known-bad behavior, then passed on retry without any code or fixture change. Is the regression proven?",
+      "expected_output": "An inconclusive result that preserves both outcomes and flags flakiness.",
+      "expectations": [
+        "Records the failed and passed retry outcomes",
+        "Identifies the absence of a relevant change between runs",
+        "Classifies the proof as inconclusive rather than caught",
+        "Requires a stable comparison before claiming protection"
+      ]
     }
   ]
 }

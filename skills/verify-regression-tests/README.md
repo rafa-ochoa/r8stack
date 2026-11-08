@@ -2,7 +2,7 @@
 
 **Prove a regression test detects the behavior it claims to protect.**
 
-`verify-regression-tests` verifies a regression test by breaking the relevant production behavior in a safe, isolated copy and confirming the test fails at the intended assertion. It catches false confidence from broad snapshots, project-owned mocks, coverage-only claims, or a test that never notices a wrong result.
+`verify-regression-tests` compares one unchanged regression test against working, faithfully known-bad, and restored behavior. It requires the expected assertion failure—not merely any failure—before calling the test proven.
 
 It does not replace feature implementation, test-first development, or release verification. It proves the sensitivity of tests that already exist or have just been changed.
 
@@ -33,4 +33,5 @@ Each reported behavior is classified as caught, missed, inconclusive, or untesta
 ## Read more
 
 - [Skill instructions](SKILL.md)
+- [Comparison proof](references/comparison-proof.md)
 - [Evaluations](evals/evals.json)
