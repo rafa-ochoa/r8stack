@@ -73,7 +73,7 @@
     },
     {
       "id": 6,
-      "prompt": "The known-bad checkout test fails, but only because the page title assertion fails before the save-error assertion. Can we call the regression caught?",
+      "prompt": "The broken version checkout test fails, but only because the page title assertion fails before the save-error assertion. Can we call the regression caught?",
       "expected_output": "An inconclusive result because the intended assertion was not reached.",
       "expectations": [
         "Names the expected and observed assertions",
@@ -99,13 +99,13 @@
       "expectations": [
         "Inspects existing coverage before adding a test",
         "Identifies the existing assertion that protects the behavior",
-        "Uses that unchanged test for working, known-bad, and restored runs",
+        "Uses that unchanged test for working, broken version, and restored runs",
         "Does not add duplicate coverage"
       ]
     },
     {
       "id": 9,
-      "prompt": "The assertion failed once against the known-bad behavior, then passed on retry without any code or fixture change. Is the regression proven?",
+      "prompt": "The assertion failed once against the broken version, then passed on retry without any code or fixture change. Is the regression proven?",
       "expected_output": "An inconclusive result that preserves both outcomes and flags flakiness.",
       "expectations": [
         "Records the failed and passed retry outcomes",

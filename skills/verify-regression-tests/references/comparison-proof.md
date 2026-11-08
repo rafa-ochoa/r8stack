@@ -6,7 +6,7 @@ Read this reference when the three-run comparison is blocked, fails unexpectedly
 
 Keep the test command, test file, fixtures, test data, and relevant configuration constant. Change only the production behavior needed to recreate the specific defect. Record every material failed attempt: what changed, the outcome, and what the next run established.
 
-Use a known-bad revision when it faithfully contains the defect. Otherwise make the smallest runnable production change in an isolated worktree or fixture. A syntax error, missing import, changed test setup, or stopped server is not a faithful known-bad comparison.
+Use a revision that contains the defect when one faithfully reproduces it. Otherwise make the smallest runnable production change in an isolated worktree or fixture. A syntax error, missing import, changed test setup, or stopped server is not a faithful comparison with the broken version.
 
 Afterward, remove only the temporary change and verify:
 
@@ -18,8 +18,8 @@ Afterward, remove only the temporary change and verify:
 
 | Observation | Classification and response |
 | --- | --- |
-| Known-bad run fails at another assertion | **Inconclusive.** Report the expected and observed assertion; fix the unrelated failure or choose a faithful reproduction before retrying. |
-| Known-bad run passes | **Missed.** The test did not establish protection; strengthen its observable assertion or setup. |
+| Broken version run fails at another assertion | **Inconclusive.** Report the expected and observed assertion; fix the unrelated failure or choose a faithful reproduction before retrying. |
+| Broken version run passes | **Missed.** The test did not establish protection; strengthen its observable assertion or setup. |
 | A retry passes without a relevant change | **Inconclusive.** Preserve both outcomes and report possible flakiness; stabilize the baseline before claiming proof. |
 | Test setup, import, type, timeout, or environment fails | **Inconclusive.** Repair or isolate the environment; do not count the failure as an assertion-level catch. |
 | Existing test already covers the behavior | Name the existing assertion and verify its sensitivity. Do not add a duplicate test. |

@@ -24,7 +24,7 @@ Helps coding agents turn an implemented diff into evidence-backed, review-ready 
 
 ### [Verify regression tests](skills/verify-regression-tests/README.md)
 
-![Verify regression tests: Working, Known-bad, Restored](skills/verify-regression-tests/cover.svg)
+![Verify regression tests: Working, Broken version, Restored](skills/verify-regression-tests/cover.svg)
 
 **Prove a test detects the regression it claims to prevent.**
 
