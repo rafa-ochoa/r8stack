@@ -11,8 +11,33 @@ Use the skills as a simple delivery flow:
 1. **Decide what to build** with [`judgment-led-delivery`](skills/judgment-led-delivery/README.md): clarify product scope, build the requested experience, and assess the complete user journey.
 2. **Verify the delivery** with [`verified-delivery`](skills/verified-delivery/README.md): gather evidence from the implemented diff, review it proportionately to risk, and prepare it for human review.
 3. **Prove a regression test** with [`verify-regression-tests`](skills/verify-regression-tests/README.md), when a changed or existing regression test needs proof that it catches the specific behavior it protects.
+4. **Evaluate execution efficiency** with [`efficient-execution`](skills/efficient-execution/README.md), when considering context, model, handoff, browser, cache, or loop-control optimizations.
+5. **Improve a skill carefully** with [`skill-engineering`](skills/skill-engineering/README.md), when repeated delivery evidence justifies a bounded instruction revision.
 
-The third step is optional: use it for important regression coverage, not every routine change. Each skill has a narrow role, so none replaces the others.
+The third and fourth steps are optional: use regression proof for important coverage and efficiency evaluation before adopting execution optimizations. Each skill has a narrow role, so none replaces the others.
+
+## Claude Code workflow and Mods
+
+Read [the Claude execution workflow](docs/claude-execution-workflow.md) for the complete operating flow: which skill owns each stage, how `TokenEconomizer` Mods may support the work, the non-negotiable verification safeguards, and the stopping conditions that prevent endless loops.
+
+### Single-entry orchestration
+
+The planned `r8a-delivery-flow` coordinator will be the single entry point for work that needs more than one skill. It will select the applicable stages from the workflow, keep optional stages optional, and stop before a merge or deployment:
+
+![r8a delivery flow: select only the stages the work needs](docs/assets/claude-execution-flow.svg)
+
+```text
+Use r8a-delivery-flow to implement this feature. Stop before merge.
+```
+
+When it is implemented, expect it to:
+
+1. Inspect the request and repository, then select only the relevant skills rather than running a fixed five-stage loop.
+2. Advance to `verified-delivery` only after an implemented diff exists; run regression-test proof only when named coverage matters; evaluate Mods only when an optimization is requested.
+3. Preserve decisions, changed files, checks, failures, blockers, and the next action across every handoff.
+4. Stop with an evidence-backed result, an owner-needed blocker, or before a merge/deploy. It will never treat a passing check as permission to publish.
+
+`r8a-delivery-flow` is not installed in this catalog yet, so use the individual skills above until its implementation and evaluations are added. The [workflow guide](docs/claude-execution-workflow.md) defines its intended gates and boundaries.
 
 ## Skills in this collection
 
@@ -39,6 +64,22 @@ Helps coding agents turn an implemented diff into evidence-backed, review-ready 
 **Prove a test detects the regression it claims to prevent.**
 
 Helps coding agents prove that regression tests detect the behavior they claim to protect. It safely breaks a named production behavior in an isolated copy and requires an assertion-level failure before calling that coverage proof. It complements both delivery skills with focused regression-test evidence.
+
+### [Efficient execution](skills/efficient-execution/README.md)
+
+![Efficient execution: Optimize without weakening verification](skills/efficient-execution/cover.svg)
+
+**Optimize agent execution without weakening correctness.**
+
+Helps coding agents assess context compression, model and effort routing, handoffs, browser payloads, caching, and loop-control Mods. It requires measurable baselines, reversible trials, preserved delivery evidence, and explicit approval before any plugin is installed or activated.
+
+### [Skill engineering](skills/skill-engineering/README.md)
+
+![Skill engineering: Evaluate improvements against fixed evidence](skills/skill-engineering/cover.svg)
+
+**Improve skills from evidence, not endless rewrites.**
+
+Helps coding agents decide whether recurring delivery evidence warrants a focused skill revision, compare it against fixed evaluations, and stop with a proposal, rejection, or inconclusive result. It keeps application fixes and tooling improvements ahead of generic instruction churn.
 
 ## Install the collection
 

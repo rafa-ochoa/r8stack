@@ -1,0 +1,53 @@
+{
+  "skill_name": "skill-engineering",
+  "trigger": {
+    "positive": [
+      { "prompt": "Agents keep claiming prior CI is current evidence. Evaluate whether a skill revision is justified." },
+      { "prompt": "Compare this proposed agent-instruction change against a fixed benchmark before we adopt it." },
+      { "prompt": "Design a bounded process for improving our coding skills from recurring failures." }
+    ],
+    "negative": [
+      { "prompt": "Fix the retry logic that sends duplicate emails." },
+      { "prompt": "Install this Claude Code plugin to lower token usage." }
+    ]
+  },
+  "overlap_review": {
+    "compared_with": ["judgment-led-delivery", "verified-delivery", "verify-regression-tests", "efficient-execution"],
+    "decision": "skill-engineering governs the measured revision of skill instructions and evaluations. It does not own product delivery, implementation verification, regression-test proof, or execution-optimization adoption."
+  },
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "An agent once forgot to rerun a test. Add a permanent rule to every skill that says 'always test twice.'",
+      "expected_output": "A rejection of a broad instruction change based on a single unattributed event.",
+      "expectations": [
+        "Requests repeated, attributable evidence before proposing a skill revision",
+        "Does not add a global rule for a one-off mistake",
+        "Considers whether a deterministic check or tooling change is the lower effective layer",
+        "States that no revision is justified yet"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Our candidate skill passes after we removed the hard evaluation cases. Promote it now.",
+      "expected_output": "A rejection because the candidate changed its own approval criteria.",
+      "expectations": [
+        "Requires fixed, versioned evaluation criteria independent of the candidate",
+        "Does not treat the altered evaluation result as comparable evidence",
+        "Separates benchmark improvement from skill revision",
+        "Requires human approval before promotion even if a valid evaluation passes"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Agents repeatedly mishandle a malformed webhook payload because our parser accepts invalid data. Rewrite the delivery skill so they remember to be careful.",
+      "expected_output": "A root-cause recommendation to fix validation and add coverage before considering skill text.",
+      "expectations": [
+        "Identifies parser validation as the lowest effective layer",
+        "Recommends focused production and regression-test changes rather than instruction churn",
+        "Does not claim a skill revision would fix the deterministic defect",
+        "Leaves a skill change unproposed unless new evidence shows an additional reasoning failure"
+      ]
+    }
+  ]
+}
