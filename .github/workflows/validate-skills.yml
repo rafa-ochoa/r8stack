@@ -13,5 +13,5 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: node --test test/validate-skill-evaluations.test.mjs
+      - run: node --test test/validate-skill-evaluations.test.mjs test/installation-docs.test.mjs
       - run: node scripts/validate-skill-evaluations.mjs

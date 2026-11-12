@@ -1,6 +1,6 @@
-import { readFile, readdir } from 'node:fs/promises';
+import { readFile, readdir, stat } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
-import { dirname, join, relative, resolve } from 'node:path';
+import { dirname, isAbsolute, join, relative, resolve, sep } from 'node:path';
 
 const minimumPositiveTriggers = 3;
 const minimumNegativeTriggers = 2;
@@ -10,6 +10,7 @@ export async function validateSkillEvaluations(catalogPath) {
   const skillsPath = join(catalogPath, 'skills');
   const skillEntries = await readdir(skillsPath, { withFileTypes: true });
   const skillDirectories = skillEntries.filter(entry => entry.isDirectory());
+  const catalogSkillNames = new Set(skillDirectories.map(entry => entry.name));
   const violations = [];
 
   for (const skillDirectory of skillDirectories) {
@@ -26,8 +27,11 @@ export async function validateSkillEvaluations(catalogPath) {
     validateEvaluationName(evaluation, skillName, evaluationFilePath, catalogPath, violations);
     validateTriggerPrompts(evaluation, evaluationFilePath, catalogPath, violations);
     validateBehaviorEvaluations(evaluation, evaluationFilePath, catalogPath, violations);
-    validateOverlapReview(evaluation, evaluationFilePath, catalogPath, violations);
+    validateEvaluationIds(evaluation, evaluationFilePath, catalogPath, violations);
+    validateOverlapReview(evaluation, evaluationFilePath, catalogPath, catalogSkillNames, violations);
   }
+
+  await validateMarkdownLinks(catalogPath, violations);
 
   return violations;
 }
@@ -117,7 +121,18 @@ function validateBehaviorEvaluations(evaluation, evaluationFilePath, catalogPath
   }
 }
 
-function validateOverlapReview(evaluation, evaluationFilePath, catalogPath, violations) {
+function validateEvaluationIds(evaluation, evaluationFilePath, catalogPath, violations) {
+  if (!Array.isArray(evaluation.evals)) return;
+
+  const ids = evaluation.evals.map(behaviorEvaluation => behaviorEvaluation?.id);
+  const hasPositiveIds = ids.every(id => Number.isInteger(id) && id > 0);
+
+  if (!hasPositiveIds || new Set(ids).size !== ids.length) {
+    violations.push(`${toCatalogPath(evaluationFilePath, catalogPath)} evals ids must be unique positive integers`);
+  }
+}
+
+function validateOverlapReview(evaluation, evaluationFilePath, catalogPath, catalogSkillNames, violations) {
   const evaluationPath = toCatalogPath(evaluationFilePath, catalogPath);
   const overlapReview = evaluation.overlap_review;
   const hasComparedSkills = Array.isArray(overlapReview?.compared_with)
@@ -127,6 +142,52 @@ function validateOverlapReview(evaluation, evaluationFilePath, catalogPath, viol
 
   if (!hasComparedSkills || !hasDecision) {
     violations.push(`${evaluationPath} must include overlap_review.compared_with and overlap_review.decision`);
+    return;
+  }
+
+  for (const comparedSkill of overlapReview.compared_with) {
+    if (!catalogSkillNames.has(comparedSkill)) {
+      violations.push(`${evaluationPath} overlap_review.compared_with names unknown skill ${comparedSkill}`);
+    }
+  }
+}
+
+async function validateMarkdownLinks(catalogPath, violations) {
+  const entries = await readdir(catalogPath, { recursive: true, withFileTypes: true });
+  const markdownPaths = entries
+    .filter(entry => entry.isFile() && entry.name.endsWith('.md'))
+    .map(entry => join(entry.parentPath, entry.name))
+    .filter(filePath => !toCatalogPath(filePath, catalogPath).split('/').some(part => part === '.git' || part === 'node_modules'))
+    .sort();
+
+  for (const markdownPath of markdownPaths) {
+    const markdown = await readFile(markdownPath, 'utf8');
+    const prose = markdown.replace(/^```[\s\S]*?^```/gm, '').replace(/`[^`\n]*`/g, '');
+    const markdownCatalogPath = toCatalogPath(markdownPath, catalogPath);
+
+    for (const [, target] of prose.matchAll(/!?\[[^\]]*\]\(<?([^)\s>]+)>?(?:\s+"[^"]*")?\)/g)) {
+      if (target.startsWith('#') || /^[a-z][a-z0-9+.-]*:/i.test(target)) continue;
+
+      const localTarget = decodeURIComponent(target.split(/[#?]/)[0]);
+      const resolvedTarget = resolve(dirname(markdownPath), localTarget);
+      const catalogRelativeTarget = relative(catalogPath, resolvedTarget);
+
+      if (catalogRelativeTarget === '..' || catalogRelativeTarget.startsWith(`..${sep}`) || isAbsolute(catalogRelativeTarget)) {
+        violations.push(`${markdownCatalogPath} links outside the repository: ${target}`);
+      } else if (!(await pathExists(resolvedTarget))) {
+        violations.push(`${markdownCatalogPath} links to missing file ${localTarget}`);
+      }
+    }
+  }
+}
+
+async function pathExists(filePath) {
+  try {
+    await stat(filePath);
+    return true;
+  } catch (error) {
+    if (error.code === 'ENOENT' || error.code === 'ENOTDIR') return false;
+    throw error;
   }
 }
 

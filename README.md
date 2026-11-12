@@ -20,6 +20,12 @@ The third and fourth steps are optional: use regression proof for important cove
 
 Read [the Claude execution workflow](docs/claude-execution-workflow.md) for the complete operating flow: which skill owns each stage, how `TokenEconomizer` Mods may support the work, the non-negotiable verification safeguards, and the stopping conditions that prevent endless loops.
 
+Three companion documents turn that workflow into repeatable evidence:
+
+- [Mod compatibility pilot](docs/mod-compatibility-pilot.md): a fill-in record and test scenarios for trialling an external Mod on a real host.
+- [Skill evaluation harness](docs/skill-evaluation-harness.md): the specification for a future opt-in runner that compares skill revisions against fixed prompts.
+- [delivery-flow acceptance criteria](docs/delivery-flow-spec.md) (planned): the states, handoffs, and route matrix the coordinator must satisfy.
+
 ### Planned single-entry orchestration
 
 ![r8 delivery flow: select only the stages the work needs](docs/assets/claude-execution-flow.svg)
