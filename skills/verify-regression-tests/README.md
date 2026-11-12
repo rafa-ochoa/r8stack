@@ -13,7 +13,7 @@ It does not replace feature implementation, test-first development, or release v
 Install this skill for Codex and Claude Code:
 
 ```bash
-npx skills add rafa-ochoa/r8a-skills --skill verify-regression-tests -g -a codex -a claude-code -y
+npx skills add rafa-ochoa/r8-skills --skill verify-regression-tests -g -a codex -a claude-code -y
 ```
 
 Remove `-g` for a project-only installation. Already installed? Update it with:

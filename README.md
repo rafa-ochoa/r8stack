@@ -1,4 +1,4 @@
-# r8a-skills
+# r8-skills
 
 **A collection of reusable Agent Skills for coding agents.**
 
@@ -20,14 +20,12 @@ The third and fourth steps are optional: use regression proof for important cove
 
 Read [the Claude execution workflow](docs/claude-execution-workflow.md) for the complete operating flow: which skill owns each stage, how `TokenEconomizer` Mods may support the work, the non-negotiable verification safeguards, and the stopping conditions that prevent endless loops.
 
-### Single-entry orchestration
+### Planned single-entry orchestration
 
-The planned `r8a-delivery-flow` coordinator will be the single entry point for work that needs more than one skill. It will select the applicable stages from the workflow, keep optional stages optional, and stop before a merge or deployment:
-
-![r8a delivery flow: select only the stages the work needs](docs/assets/claude-execution-flow.svg)
+![r8 delivery flow: select only the stages the work needs](docs/assets/claude-execution-flow.svg)
 
 ```text
-Use r8a-delivery-flow to implement this feature. Stop before merge.
+Use delivery-flow to implement this feature. Stop before merge.
 ```
 
 When it is implemented, expect it to:
@@ -37,7 +35,7 @@ When it is implemented, expect it to:
 3. Preserve decisions, changed files, checks, failures, blockers, and the next action across every handoff.
 4. Stop with an evidence-backed result, an owner-needed blocker, or before a merge/deploy. It will never treat a passing check as permission to publish.
 
-`r8a-delivery-flow` is not installed in this catalog yet, so use the individual skills above until its implementation and evaluations are added. The [workflow guide](docs/claude-execution-workflow.md) defines its intended gates and boundaries.
+`delivery-flow` is not installed in this catalog yet, so use the individual skills above until its implementation and evaluations are added. The [workflow guide](docs/claude-execution-workflow.md) defines its intended gates and boundaries.
 
 ## Skills in this collection
 
@@ -86,7 +84,7 @@ Helps coding agents decide whether recurring delivery evidence warrants a focuse
 Install **all skills** in this repository globally for Codex and Claude Code:
 
 ```bash
-npx skills add rafa-ochoa/r8a-skills -g -a codex -a claude-code -y
+npx skills add rafa-ochoa/r8-skills -g -a codex -a claude-code -y
 ```
 
 Requires Node.js 22.20 or later. The command selects Codex and Claude Code directly, so there is no agent-selection screen.

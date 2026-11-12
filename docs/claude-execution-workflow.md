@@ -1,6 +1,6 @@
 # Claude execution workflow
 
-This is the operating flow for the r8a skill collection when used with Claude Code. It connects product delivery, verification, regression-test proof, execution efficiency, and measured skill improvement without turning them into an automatic loop.
+This is the operating flow for the r8 skill collection when used with Claude Code. It connects product delivery, verification, regression-test proof, execution efficiency, and measured skill improvement without turning them into an automatic loop.
 
 ## The flow
 
@@ -44,11 +44,9 @@ Model routing, effort routing, browser-payload reduction, cache management, and 
 
 This workflow is intentionally host-agnostic. If Codex later provides a native equivalent to a Mod mechanism, reevaluate the external plugin before continuing to rely on it. Prefer the native capability when it preserves the same safety floor, exposes the needed evidence and controls, and can be verified on the current host version. Update this guide with the observed behavior, compatibility result, migration or rollback path, and any remaining reason to keep an external Mod; do not assume that a native feature is automatically safer or equivalent.
 
-## Current Mod verification status
+## Mod compatibility record
 
-The local `TokenEconomizer` plugin is installed and enabled. Its live status confirms `toolprune=auto`, `loopguard=nudge`, and `microskills=off`; it has not applied a tool-pruning proposal in this repository. A read-only Claude Code 2.1.319 session loaded the plugin's startup hook successfully and returned the expected response, proving basic host integration. Its repository test suite was run in a temporary environment: **933 passed, 11 skipped, and 7 failed**. The failures cover plugin-copy discovery and Copilot model-spelling behavior, not the three mechanisms above, but they prevent a claim of complete plugin compatibility. In addition, its documented Claude Code support ends at 2.1.310 while the local host is 2.1.319.
-
-Therefore the workflow treats the installation as **present but not yet approved for broader adoption**. The next valid proof is a scoped, reversible Claude Code pilot that verifies hook behavior and restoration on the local host version; do not treat the existing installation or unit-test pass count as proof of savings or compatibility.
+Do not commit one machine's plugin state, host version, or test result as catalog truth. Record each pilot outside this catalog or in a dated compatibility record that identifies the plugin and host versions, mechanisms enabled, test scope, evidence, failures, rollback command, and reviewer. Treat every new host or plugin version as unverified until the same reversible pilot is repeated.
 
 ## Non-negotiable safety floor
 

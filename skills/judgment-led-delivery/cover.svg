@@ -17,7 +17,7 @@
   <circle cx="155" cy="530" r="260" fill="url(#glow)" opacity=".35"/>
   <path d="M62 38h1076" stroke="#64708c" stroke-opacity=".28"/>
   <path d="M62 590h1076" stroke="#64708c" stroke-opacity=".28"/>
-  <text x="62" y="88" fill="#d5c9ff" font-size="23" font-family="Arial,Helvetica,sans-serif" letter-spacing="1" font-weight="700">r8a-skills</text>
+  <text x="62" y="88" fill="#d5c9ff" font-size="23" font-family="Arial,Helvetica,sans-serif" letter-spacing="1" font-weight="700">r8-skills</text>
   <text x="1138" y="88" fill="#c3ccdf" text-anchor="end" font-size="15" letter-spacing="2" font-family="Arial,Helvetica,sans-serif" font-weight="700">01 / PRODUCT ENGINEERING</text>
   <text x="62" y="167" fill="#ffffff" font-size="60" font-family="Arial,Helvetica,sans-serif" font-weight="800" letter-spacing="-1.8">Judgment-led delivery</text>
   <text x="64" y="210" fill="#bcc7dd" font-size="23" font-family="Arial,Helvetica,sans-serif">AI makes building faster. Judgment makes it worth shipping.</text>

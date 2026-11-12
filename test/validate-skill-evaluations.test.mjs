@@ -39,6 +39,7 @@ async function createCatalog(evaluation = validEvaluation) {
     join(skillPath, 'SKILL.md'),
     '---\nname: example-skill\ndescription: Example skill.\n---\n'
   );
+  await writeFile(join(skillPath, 'README.md'), '# Example skill\n');
   await writeFile(join(skillPath, 'evals', 'evals.json'), JSON.stringify(evaluation));
 
   return catalogPath;
@@ -97,6 +98,21 @@ test('rejects a skill without a documented overlap decision', async () => {
 
   assert.deepEqual(violations, [
     'skills/example-skill/evals/evals.json must include overlap_review.compared_with and overlap_review.decision'
+  ]);
+});
+
+test('rejects a skill whose directory does not match its declared name', async () => {
+  const catalogPath = await createCatalog();
+  await writeFile(
+    join(catalogPath, 'skills', 'example-skill', 'SKILL.md'),
+    '---\nname: different-skill\ndescription: Example skill.\n---\n'
+  );
+
+  const violations = await validateSkillEvaluations(catalogPath);
+
+  assert.deepEqual(violations, [
+    'skills/example-skill directory name must match different-skill',
+    'skills/example-skill/evals/evals.json skill_name must match different-skill'
   ]);
 });
 

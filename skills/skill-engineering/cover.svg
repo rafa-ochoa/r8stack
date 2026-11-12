@@ -9,7 +9,7 @@
   <rect width="1200" height="630" fill="url(#background)"/>
   <circle cx="1070" cy="90" r="345" fill="url(#glow)"/><circle cx="155" cy="530" r="260" fill="url(#glow)" opacity=".35"/>
   <path d="M62 38h1076M62 590h1076" stroke="#64708c" stroke-opacity=".28"/>
-  <text x="62" y="88" fill="#d5c9ff" font-size="23" font-family="Arial,Helvetica,sans-serif" letter-spacing="1" font-weight="700">r8a-skills</text>
+  <text x="62" y="88" fill="#d5c9ff" font-size="23" font-family="Arial,Helvetica,sans-serif" letter-spacing="1" font-weight="700">r8-skills</text>
   <text x="1138" y="88" fill="#c3ccdf" text-anchor="end" font-size="15" font-family="Arial,Helvetica,sans-serif" letter-spacing="2" font-weight="700">05 / SKILL IMPROVEMENT</text>
   <text x="62" y="167" fill="#ffffff" font-size="60" font-family="Arial,Helvetica,sans-serif" font-weight="800" letter-spacing="-1.8">Skill engineering</text>
   <text x="64" y="210" fill="#bcc7dd" font-size="23" font-family="Arial,Helvetica,sans-serif">Improve instructions from evidence, then stop.</text>

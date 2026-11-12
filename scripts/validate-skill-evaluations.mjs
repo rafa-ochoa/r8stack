@@ -21,6 +21,8 @@ export async function validateSkillEvaluations(catalogPath) {
 
     if (skillName === null || evaluation === null) continue;
 
+    validateSkillDirectoryName(skillDirectory.name, skillName, skillPath, catalogPath, violations);
+    await validateSkillReadme(skillPath, catalogPath, violations);
     validateEvaluationName(evaluation, skillName, evaluationFilePath, catalogPath, violations);
     validateTriggerPrompts(evaluation, evaluationFilePath, catalogPath, violations);
     validateBehaviorEvaluations(evaluation, evaluationFilePath, catalogPath, violations);
@@ -28,6 +30,21 @@ export async function validateSkillEvaluations(catalogPath) {
   }
 
   return violations;
+}
+
+function validateSkillDirectoryName(directoryName, skillName, skillPath, catalogPath, violations) {
+  if (directoryName !== skillName) {
+    violations.push(`${toCatalogPath(skillPath, catalogPath)} directory name must match ${skillName}`);
+  }
+}
+
+async function validateSkillReadme(skillPath, catalogPath, violations) {
+  const readmePath = join(skillPath, 'README.md');
+  try {
+    await readFile(readmePath, 'utf8');
+  } catch {
+    violations.push(`${toCatalogPath(readmePath, catalogPath)} is required`);
+  }
 }
 
 async function readSkillName(skillFilePath, catalogPath, violations) {
