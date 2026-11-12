@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-labelledby="title description">
+  <title id="title">Delivery flow: choose the needed path, preserve evidence, stop safely</title>
+  <desc id="description">A delivery coordinator routes work through intake, build, verification, optional proof and evaluation, then a bounded stop.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#101426"/><stop offset="100%" stop-color="#080c18"/></linearGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#a786ff"/><stop offset="50%" stop-color="#f692c8"/><stop offset="100%" stop-color="#65dfd6"/></linearGradient>
+    <radialGradient id="glow"><stop offset="0%" stop-color="#a786ff" stop-opacity=".25"/><stop offset="100%" stop-color="#a786ff" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#background)"/>
+  <circle cx="1070" cy="90" r="345" fill="url(#glow)"/><circle cx="155" cy="530" r="260" fill="url(#glow)" opacity=".35"/>
+  <path d="M62 38h1076M62 590h1076" stroke="#64708c" stroke-opacity=".28"/>
+  <text x="62" y="88" fill="#d5c9ff" font-size="23" font-family="Arial,Helvetica,sans-serif" letter-spacing="1" font-weight="700">r8-skills</text>
+  <text x="1138" y="88" fill="#c3ccdf" text-anchor="end" font-size="15" font-family="Arial,Helvetica,sans-serif" letter-spacing="2" font-weight="700">06 / DELIVERY COORDINATION</text>
+  <text x="62" y="167" fill="#ffffff" font-size="60" font-family="Arial,Helvetica,sans-serif" font-weight="800" letter-spacing="-1.8">Delivery flow</text>
+  <text x="64" y="210" fill="#bcc7dd" font-size="23" font-family="Arial,Helvetica,sans-serif">Choose the needed path. Preserve evidence. Stop safely.</text>
+  <g stroke-width="1.8"><rect x="60" y="270" width="190" height="190" rx="22" fill="#222441" stroke="#9889ff" stroke-opacity=".7"/><rect x="280" y="270" width="190" height="190" rx="22" fill="#38253c" stroke="#fa9cc3" stroke-opacity=".7"/><rect x="500" y="270" width="190" height="190" rx="22" fill="#193439" stroke="#71dbce" stroke-opacity=".7"/><rect x="720" y="270" width="190" height="190" rx="22" fill="#243148" stroke="#85cafa" stroke-opacity=".7"/><rect x="940" y="270" width="200" height="190" rx="22" fill="#263242" stroke="#bed1ff" stroke-opacity=".7"/></g>
+  <g fill="#ffffff" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="800" text-anchor="middle"><text x="155" y="341">INTAKE</text><text x="375" y="341">ROUTE</text><text x="595" y="341">BUILD</text><text x="815" y="341">VERIFY</text><text x="1040" y="341">STOP</text></g>
+  <g fill="#dce2f0" font-family="Arial,Helvetica,sans-serif" font-size="16" text-anchor="middle"><text x="155" y="382">Goal and constraints</text><text x="155" y="408">Known worktree</text><text x="375" y="382">Only needed skills</text><text x="375" y="408">Optional branches</text><text x="595" y="382">Changed files</text><text x="595" y="408">Decisions</text><text x="815" y="382">Checks and failures</text><text x="815" y="408">Review evidence</text><text x="1040" y="382">Done or blocked</text><text x="1040" y="408">Before publish</text></g>
+  <g fill="none" stroke="#d4dcf3" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M255 365h17m-7-7 7 7-7 7"/><path d="M475 365h17m-7-7 7 7-7 7"/><path d="M695 365h17m-7-7 7 7-7 7"/><path d="M915 365h17m-7-7 7 7-7 7"/></g>
+  <path d="M1020 500 Q603 555 184 500" fill="none" stroke="url(#edge)" stroke-width="3" stroke-dasharray="9 9" stroke-linecap="round"/>
+  <text x="602" y="548" text-anchor="middle" fill="#c9d2e7" font-size="17" font-family="Arial,Helvetica,sans-serif" letter-spacing="2.6" font-weight="700">HAND OFF · VERIFY · STOP</text>
+</svg>

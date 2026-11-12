@@ -1,10 +1,12 @@
 import assert from 'node:assert/strict';
-import { mkdtemp, mkdir, writeFile } from 'node:fs/promises';
+import { mkdtemp, mkdir, readFile, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import test from 'node:test';
 
 import { validateSkillEvaluations } from '../scripts/validate-skill-evaluations.mjs';
+
+const repositoryPath = join(import.meta.dirname, '..');
 
 const validEvaluation = {
   skill_name: 'example-skill',
@@ -238,4 +240,25 @@ test('ignores external URLs, anchors, and links inside code fences', async () =>
   const violations = await validateSkillEvaluations(catalogPath);
 
   assert.deepEqual(violations, []);
+});
+
+test('delivery-flow evaluates every supported route before it is published', async () => {
+  const evaluationPath = join(repositoryPath, 'skills', 'delivery-flow', 'evals', 'evals.json');
+  const evaluation = JSON.parse(await readFile(evaluationPath, 'utf8'));
+  const routeNames = evaluation.evals.map(({ route }) => route);
+
+  assert.deepEqual(routeNames, [
+    'clear-feature',
+    'narrow-bug-fix',
+    'high-risk-change',
+    'regression-proof',
+    'mod-evaluation',
+    'skill-assessment'
+  ]);
+
+  for (const evaluationCase of evaluation.evals) {
+    assert.ok(Array.isArray(evaluationCase.expected_states));
+    assert.ok(evaluationCase.expected_states.length >= 3);
+    assert.ok(evaluationCase.expectations.some(expectation => expectation.includes('stops')));
+  }
 });

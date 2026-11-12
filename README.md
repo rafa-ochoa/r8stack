@@ -2,7 +2,7 @@
 
 **A collection of reusable Agent Skills for coding agents.**
 
-Three focused skills for moving from a useful change to trustworthy delivery. They work with Codex, Claude Code, and other compatible coding agents. Install one when it fits, or install the collection.
+Six focused skills for moving from a useful change to trustworthy delivery. They work with Codex, Claude Code, and other compatible coding agents. Install one when it fits, or install the collection.
 
 ## Start here
 
@@ -24,9 +24,9 @@ Three companion documents turn that workflow into repeatable evidence:
 
 - [Mod compatibility pilot](docs/mod-compatibility-pilot.md): a fill-in record and test scenarios for trialling an external Mod on a real host.
 - [Skill evaluation harness](docs/skill-evaluation-harness.md): the specification for a future opt-in runner that compares skill revisions against fixed prompts.
-- [delivery-flow acceptance criteria](docs/delivery-flow-spec.md) (planned): the states, handoffs, and route matrix the coordinator must satisfy.
+- [delivery-flow acceptance criteria](docs/delivery-flow-spec.md): the states, handoffs, and route matrix the coordinator satisfies.
 
-### Planned single-entry orchestration
+### Single-entry orchestration
 
 ![r8 delivery flow: select only the stages the work needs](docs/assets/claude-execution-flow.svg)
 
@@ -34,14 +34,14 @@ Three companion documents turn that workflow into repeatable evidence:
 Use delivery-flow to implement this feature. Stop before merge.
 ```
 
-When it is implemented, expect it to:
+[`delivery-flow`](skills/delivery-flow/README.md) coordinates this flow when you explicitly invoke it. Expect it to:
 
 1. Inspect the request and repository, then select only the relevant skills rather than running a fixed five-stage loop.
 2. Advance to `verified-delivery` only after an implemented diff exists; run regression-test proof only when named coverage matters; evaluate Mods only when an optimization is requested.
 3. Preserve decisions, changed files, checks, failures, blockers, and the next action across every handoff.
 4. Stop with an evidence-backed result, an owner-needed blocker, or before a merge/deploy. It will never treat a passing check as permission to publish.
 
-`delivery-flow` is not installed in this catalog yet, so use the individual skills above until its implementation and evaluations are added. The [workflow guide](docs/claude-execution-workflow.md) defines its intended gates and boundaries.
+The coordinator is optional: use an individual skill whenever its narrower scope is enough. The [workflow guide](docs/claude-execution-workflow.md) defines the shared gates and boundaries.
 
 ## Skills in this collection
 
@@ -84,6 +84,14 @@ Helps coding agents assess context compression, model and effort routing, handof
 **Improve skills from evidence, not endless rewrites.**
 
 Helps coding agents decide whether recurring delivery evidence warrants a focused skill revision, compare it against fixed evaluations, and stop with a proposal, rejection, or inconclusive result. It keeps application fixes and tooling improvements ahead of generic instruction churn.
+
+### [Delivery flow](skills/delivery-flow/README.md)
+
+![Delivery flow: choose the needed path, preserve evidence, stop safely](skills/delivery-flow/cover.svg)
+
+**Coordinate only the stages the task needs.**
+
+Helps coding agents select and connect the catalog's delivery skills for an explicitly requested workflow. It preserves handoff evidence, routes narrow tasks without ceremony, and stops before any merge, publish, installation, or host-configuration action.
 
 ## Install the collection
 

@@ -1,0 +1,68 @@
+{
+  "skill_name": "delivery-flow",
+  "trigger": {
+    "positive": [
+      { "prompt": "Use delivery-flow to implement this feature, verify it, and stop before merge." },
+      { "prompt": "Coordinate the requested bug fix through the right repository skills without changing configuration." },
+      { "prompt": "Run the delivery workflow for this named regression-test proof and give me the final evidence." }
+    ],
+    "negative": [
+      { "prompt": "Add keyboard navigation to the settings dialog." },
+      { "prompt": "Install this Claude Code Mod globally." }
+    ]
+  },
+  "overlap_review": {
+    "compared_with": ["judgment-led-delivery", "verified-delivery", "verify-regression-tests", "efficient-execution", "skill-engineering"],
+    "decision": "delivery-flow selects and connects the catalog skills for an explicitly requested coordinated task. The named skills retain ownership of product delivery, verification, regression proof, execution optimization, and skill revision respectively."
+  },
+  "evals": [
+    {
+      "id": 1,
+      "route": "clear-feature",
+      "prompt": "Use delivery-flow to add a saved-search feature. The scope is clear. Verify it and stop before merge.",
+      "expected_output": "A build followed by proportionate verification, ending before merge.",
+      "expected_states": ["intake", "build", "verify", "done"],
+      "expectations": ["Selects judgment-led-delivery for the product change", "Enters verification only after an implemented diff exists", "Preserves changed files and check results in the handoff", "stops before merge or publication"]
+    },
+    {
+      "id": 2,
+      "route": "narrow-bug-fix",
+      "prompt": "Use delivery-flow to fix the orders filter resetting on refresh. Do not expand product scope.",
+      "expected_output": "A focused fix and verification without unnecessary product discovery.",
+      "expected_states": ["intake", "build", "verify", "done"],
+      "expectations": ["Uses repository implementation guidance for the narrow bug", "Does not add unrelated discovery stages", "Reports evidence for the resulting diff", "stops with a verified result or blocker"]
+    },
+    {
+      "id": 3,
+      "route": "high-risk-change",
+      "prompt": "Use delivery-flow for this authorization migration. We have not decided the rollback owner or approval boundary.",
+      "expected_output": "Clarification, implementation and verification evidence, then a human-approval blocker.",
+      "expected_states": ["intake", "clarify", "build", "verify", "blocked"],
+      "expectations": ["Asks for the consequential rollback and approval decision", "Treats the change as high risk", "Records a rollback plan and evidence", "stops blocked for explicit human approval"]
+    },
+    {
+      "id": 4,
+      "route": "regression-proof",
+      "prompt": "Use delivery-flow to prove whether the existing checkout rejection test catches its claimed regression. Do not change the feature.",
+      "expected_output": "A named regression-proof result without implementation work.",
+      "expected_states": ["intake", "prove-regression", "done"],
+      "expectations": ["Selects verify-regression-tests", "Does not enter a feature build route", "Returns caught, missed, inconclusive, or untestable evidence", "stops after recording the proof"]
+    },
+    {
+      "id": 5,
+      "route": "mod-evaluation",
+      "prompt": "Use delivery-flow to evaluate whether TokenEconomizer is worth piloting for this repository. Do not install or enable it.",
+      "expected_output": "A bounded Mod-evaluation recommendation with no host changes.",
+      "expected_states": ["intake", "evaluate-mod", "done"],
+      "expectations": ["Selects efficient-execution and the compatibility pilot", "Requires a fixed baseline and reversible candidate scope", "Does not install, enable, or reconfigure a Mod", "stops with a recommendation, rejection, or evidence gap"]
+    },
+    {
+      "id": 6,
+      "route": "skill-assessment",
+      "prompt": "Use delivery-flow to assess repeated evidence that agents lose failed-test paths across handoffs. Do not edit any skill yet.",
+      "expected_output": "One bounded skill-assessment decision without automatic instruction edits.",
+      "expected_states": ["intake", "assess-skill", "done"],
+      "expectations": ["Selects skill-engineering based on repeated evidence", "Uses fixed evaluation criteria before a proposed revision", "Does not edit or publish a skill automatically", "stops with one proposal, rejection, or inconclusive result"]
+    }
+  ]
+}

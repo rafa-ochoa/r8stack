@@ -1,6 +1,6 @@
 # delivery-flow acceptance criteria
 
-> **Status: planned.** `delivery-flow` is not implemented or installed. This document defines what an implementation must do before it can be added to the catalog.
+> **Status: implemented.** [`delivery-flow`](../skills/delivery-flow/README.md) is installed in the catalog. This document defines its acceptance contract and the route cases its evaluations must preserve.
 
 `delivery-flow` is a single-entry coordinator for the existing skills. It is a **state machine**, not a fixed sequence: it enters only the states the work needs, and every transition depends on evidence produced in the previous state.
 
@@ -87,7 +87,7 @@ It never starts another cycle on its own after stopping.
 
 ## Route matrix
 
-An implementation is accepted only when each route below produces the listed states and stop.
+The implementation is accepted only when each route below produces the listed states and stop.
 
 | # | Request | States entered | Optional branches | Expected stop |
 | --- | --- | --- | --- | --- |
@@ -98,4 +98,4 @@ An implementation is accepted only when each route below produces the listed sta
 | 5 | Efficiency or Mod evaluation | `intake` → `evaluate-mod` → `done` | None; uses the [Mod compatibility pilot](mod-compatibility-pilot.md) | Recommendation, rejection, or incomplete evidence; nothing installed or enabled |
 | 6 | Repeated evidence that may justify `skill-engineering` | `intake` → `assess-skill` → `done` | None; uses the [skill evaluation harness](skill-evaluation-harness.md) | One proposal or rejection; no skill changed |
 
-Each route needs a matching case in `skills/delivery-flow/evals/evals.json` before the skill is added.
+Each route has a matching case in `skills/delivery-flow/evals/evals.json`.
