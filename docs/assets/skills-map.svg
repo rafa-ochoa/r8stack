@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 790" width="1200" height="790" role="img" aria-labelledby="title description">
+  <title id="title">How r8-skills fit together</title>
+  <desc id="description">The main delivery path runs from an explicitly requested coordinator through product delivery and verification, with regression proof, execution evaluation, and skill improvement as bounded optional branches.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#101426"/><stop offset="100%" stop-color="#080c18"/></linearGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#a786ff"/><stop offset="50%" stop-color="#f692c8"/><stop offset="100%" stop-color="#65dfd6"/></linearGradient>
+    <radialGradient id="glow"><stop offset="0%" stop-color="#a786ff" stop-opacity=".25"/><stop offset="100%" stop-color="#a786ff" stop-opacity="0"/></radialGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0L9 3L0 6Z" fill="#d4dcf3"/></marker>
+  </defs>
+  <rect width="1200" height="790" fill="url(#background)"/>
+  <circle cx="1070" cy="100" r="345" fill="url(#glow)"/><circle cx="140" cy="670" r="270" fill="url(#glow)" opacity=".35"/>
+  <path d="M62 38h1076M62 748h1076" stroke="#64708c" stroke-opacity=".28"/>
+  <text x="62" y="88" fill="#d5c9ff" font-size="23" font-family="Arial,Helvetica,sans-serif" letter-spacing="1" font-weight="700">r8-skills</text>
+  <text x="1138" y="88" fill="#c3ccdf" text-anchor="end" font-size="15" font-family="Arial,Helvetica,sans-serif" letter-spacing="2" font-weight="700">HOW THE SKILLS FIT TOGETHER</text>
+  <text x="62" y="154" fill="#ffffff" font-size="48" font-family="Arial,Helvetica,sans-serif" font-weight="800">From a request to trustworthy delivery</text>
+  <text x="64" y="191" fill="#bcc7dd" font-size="20" font-family="Arial,Helvetica,sans-serif">Use one focused skill—or an explicit coordinator that prepares the next handoff.</text>
+  <text x="62" y="240" fill="#c3ccdf" font-size="14" font-family="Arial,Helvetica,sans-serif" letter-spacing="2" font-weight="700">THE MAIN DELIVERY PATH</text>
+  <g stroke-width="1.8">
+    <rect x="60" y="266" width="235" height="150" rx="22" fill="#222441" stroke="#9889ff" stroke-opacity=".8"/>
+    <rect x="365" y="266" width="235" height="150" rx="22" fill="#193439" stroke="#71dbce" stroke-opacity=".8"/>
+    <rect x="670" y="266" width="235" height="150" rx="22" fill="#243148" stroke="#85cafa" stroke-opacity=".8"/>
+    <rect x="975" y="266" width="165" height="150" rx="22" fill="#263242" stroke="#bed1ff" stroke-opacity=".8"/>
+  </g>
+  <g font-family="Arial,Helvetica,sans-serif" font-weight="800"><text x="84" y="307" fill="#bcaaff" font-size="15" letter-spacing="1.5">OPTIONAL ENTRY</text><text x="84" y="342" fill="#fff" font-size="24">DELIVERY FLOW</text><text x="389" y="307" fill="#81e1d2" font-size="15" letter-spacing="1.5">BUILD</text><text x="389" y="342" fill="#fff" font-size="24">JUDGMENT-LED</text><text x="389" y="370" fill="#fff" font-size="24">DELIVERY</text><text x="694" y="307" fill="#9bcfff" font-size="15" letter-spacing="1.5">VERIFY</text><text x="694" y="342" fill="#fff" font-size="24">VERIFIED</text><text x="694" y="370" fill="#fff" font-size="24">DELIVERY</text><text x="999" y="307" fill="#c8d6ff" font-size="15" letter-spacing="1.5">STOP</text><text x="999" y="342" fill="#fff" font-size="24">REVIEW</text><text x="999" y="370" fill="#fff" font-size="24">READY</text></g>
+  <g fill="#dce2f0" font-family="Arial,Helvetica,sans-serif" font-size="15"><text x="84" y="391">Selects the next explicit</text><text x="84" y="411">prompt and handoff</text><text x="389" y="391">Decide, build, refine</text><text x="389" y="411">the user outcome</text><text x="694" y="391">Evidence, risk review,</text><text x="694" y="411">rollback and handoff</text><text x="999" y="391">Before merge, deploy,</text><text x="999" y="411">or publish</text></g>
+  <path d="M300 341h57M605 341h57M910 341h57" fill="none" stroke="#d4dcf3" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="62" y="491" fill="#c3ccdf" font-size="14" font-family="Arial,Helvetica,sans-serif" letter-spacing="2" font-weight="700">USE ONLY WHEN THE WORK NEEDS IT</text>
+  <g stroke-width="1.8"><rect x="60" y="518" width="250" height="148" rx="22" fill="#38253c" stroke="#fa9cc3" stroke-opacity=".8"/><rect x="335" y="518" width="250" height="148" rx="22" fill="#1b3341" stroke="#65dfd6" stroke-opacity=".8"/><rect x="610" y="518" width="250" height="148" rx="22" fill="#222441" stroke="#a992ff" stroke-opacity=".8"/><rect x="885" y="518" width="255" height="148" rx="22" fill="#2b2d41" stroke="#d6b8ff" stroke-opacity=".8"/></g>
+  <g fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="800"><text x="84" y="560">VERIFY REGRESSION</text><text x="84" y="586">TESTS</text><text x="359" y="560">EFFICIENT</text><text x="359" y="586">EXECUTION</text><text x="634" y="560">SKILL</text><text x="634" y="586">ENGINEERING</text><text x="909" y="560">MODS + DASHBOARD</text></g>
+  <g fill="#dce2f0" font-family="Arial,Helvetica,sans-serif" font-size="15"><text x="84" y="622">Prove a named test</text><text x="84" y="643">detects its regression</text><text x="359" y="622">Evaluate an optimization</text><text x="359" y="643">without weakening evidence</text><text x="634" y="622">Revise a skill only from</text><text x="634" y="643">repeated evidence</text><text x="909" y="622">Planned: local, measurable,</text><text x="909" y="643">opt-in and reversible</text></g>
+  <path d="M485 421v83M790 421v83M180 421v83" fill="none" stroke="#d4dcf3" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M1012 420v83" fill="none" stroke="#d4dcf3" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="602" y="720" text-anchor="middle" fill="#c9d2e7" font-size="17" font-family="Arial,Helvetica,sans-serif" letter-spacing="2.6" font-weight="700">BUILD · VERIFY · PROVE · MEASURE · LEARN</text>
+</svg>

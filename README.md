@@ -1,30 +1,39 @@
 # r8-skills
 
-**A collection of reusable Agent Skills for coding agents.**
+**Practical, composable skills for real engineering work—not a vague agentic workflow.**
 
-Six focused skills for moving from a useful change to trustworthy delivery. They work with Codex, Claude Code, and other compatible coding agents. Install one when it fits, or install the collection.
+Six focused skills help coding agents build useful changes, establish real evidence, and stop safely. They work with Codex, Claude Code, and other compatible coding agents. Install one when it fits, or install the collection.
 
-## Start here
+## How the skills fit together
 
-Use the skills as a simple delivery flow:
+![How r8-skills fit together](docs/assets/skills-map.svg)
 
-1. **Decide what to build** with [`judgment-led-delivery`](skills/judgment-led-delivery/README.md): clarify product scope, build the requested experience, and assess the complete user journey.
-2. **Verify the delivery** with [`verified-delivery`](skills/verified-delivery/README.md): gather evidence from the implemented diff, review it proportionately to risk, and prepare it for human review.
-3. **Prove a regression test** with [`verify-regression-tests`](skills/verify-regression-tests/README.md), when a changed or existing regression test needs proof that it catches the specific behavior it protects.
-4. **Evaluate execution efficiency** with [`efficient-execution`](skills/efficient-execution/README.md), when considering context, model, handoff, browser, cache, or loop-control optimizations.
-5. **Improve a skill carefully** with [`skill-engineering`](skills/skill-engineering/README.md), when repeated delivery evidence justifies a bounded instruction revision.
+The main path is deliberately small:
 
-The third and fourth steps are optional: use regression proof for important coverage and efficiency evaluation before adopting execution optimizations. Each skill has a narrow role, so none replaces the others.
+1. Build the user outcome with [`judgment-led-delivery`](skills/judgment-led-delivery/README.md).
+2. Establish evidence with [`verified-delivery`](skills/verified-delivery/README.md).
+3. Stop before merging, deploying, publishing, or changing host configuration unless the owner explicitly authorizes it.
+
+Use the supporting skills only for their narrow jobs:
+
+- [`verify-regression-tests`](skills/verify-regression-tests/README.md) proves a named test catches the behavior it protects.
+- [`efficient-execution`](skills/efficient-execution/README.md) evaluates an optimization without weakening delivery evidence.
+- [`skill-engineering`](skills/skill-engineering/README.md) decides whether repeated evidence justifies improving a skill.
+- [`delivery-flow`](skills/delivery-flow/README.md) is an explicit coordinator: it prepares the next prompt and handoff, but does not load or run other skills automatically.
 
 ## Claude Code workflow and Mods
 
-Read [the Claude execution workflow](docs/claude-execution-workflow.md) for the complete operating flow: which skill owns each stage, how `TokenEconomizer` Mods may support the work, the non-negotiable verification safeguards, and the stopping conditions that prevent endless loops.
+Read [the Claude execution workflow](docs/claude-execution-workflow.md) for the complete operating flow: which skill owns each stage, the non-negotiable verification safeguards, and the stopping conditions that prevent endless loops.
 
 Three companion documents turn that workflow into repeatable evidence:
 
 - [Mod compatibility pilot](docs/mod-compatibility-pilot.md): a fill-in record and test scenarios for trialling an external Mod on a real host.
 - [Skill evaluation harness](docs/skill-evaluation-harness.md): the specification for a future opt-in runner that compares skill revisions against fixed prompts.
 - [delivery-flow acceptance criteria](docs/delivery-flow-spec.md): the states, handoffs, and route matrix the coordinator satisfies.
+
+### Planned Mod and dashboard layer
+
+The intended local-first extension is a read-only savings dashboard followed by independently auditable, opt-in Mods for context handoff, browser/output reduction, input routing, effort and model recommendations, and cache decisions. None of these Mods or the dashboard is installed or enabled by this catalog today. The [Mod compatibility pilot](docs/mod-compatibility-pilot.md) defines the evidence and rollback requirement before any external plugin is adopted.
 
 ### Single-entry orchestration
 
