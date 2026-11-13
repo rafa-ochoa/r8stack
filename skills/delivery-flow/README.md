@@ -22,7 +22,7 @@ Invoke it explicitly when you want one coordinated workflow:
 
 > Use delivery-flow to implement the account-recovery feature. Preserve the existing uncommitted work, verify the resulting diff, and stop before merge.
 
-It records the goal, decisions, changed files, checks, failures, blockers, and next action at each handoff. It calls only the skills the work needs and never treats a passing check as authorization to publish, merge, deploy, install, or enable a Mod.
+It records the goal, decisions, changed files, checks, failures, blockers, and next action at each handoff. It prepares the next explicit skill prompt; it does not load or run other skills automatically. It never treats a passing check as authorization to publish, merge, deploy, install, or enable a Mod.
 
 ## Routes
 

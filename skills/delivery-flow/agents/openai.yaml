@@ -1,0 +1,7 @@
+interface:
+  display_name: "Delivery flow"
+  short_description: "Coordinate an explicit delivery workflow"
+  default_prompt: "Use $delivery-flow to plan the next delivery stage and stop before merge."
+
+policy:
+  allow_implicit_invocation: false

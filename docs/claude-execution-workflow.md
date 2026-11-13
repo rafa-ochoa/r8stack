@@ -10,7 +10,7 @@ These are not mandatory consecutive stages. Start with the skill matching the re
 
 ## Invocation and evaluation model
 
-Skills do **not** call themselves or one another. Invoke the relevant skill explicitly in the Claude Code prompt; this keeps the task owner in control of cost, scope, and review depth. The examples in each skill README show a representative invocation, and every skill has `evals/evals.json` with positive routing prompts, negative routing prompts, behavior-focused cases, and an overlap decision.
+Skills do **not** call themselves or one another. Invoke the relevant skill explicitly in the Claude Code prompt; this keeps the task owner in control of cost, scope, and review depth. `delivery-flow` can select the next stage and prepare its prompt plus a handoff record, but it cannot load or run that stage. The examples in each skill README show a representative invocation, and every skill has `evals/evals.json` with positive routing prompts, negative routing prompts, behavior-focused cases, and an overlap decision.
 
 Those evaluations are catalog checks, not a live proof that Claude followed the skill on this machine. Use the repository's actual commands and `verified-delivery` for delivery evidence.
 
@@ -25,6 +25,7 @@ Mods are different: once installed and enabled, their hooks can run automaticall
 | Whether one named test catches its claimed bug | `verify-regression-tests` | Substitute for broader test or release verification |
 | Cost, context, handoff, tool, or loop optimization | `efficient-execution` | Reduce required evidence, model capability, review, or approval |
 | Revision of a skill from recurring evidence | `skill-engineering` | Automatically change, approve, or publish a skill |
+| Explicit cross-skill handoff and next-stage prompt | `delivery-flow` | Load or run another skill automatically |
 
 ## Claude Code Mods: allowed role
 

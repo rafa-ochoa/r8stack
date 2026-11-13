@@ -245,20 +245,38 @@ test('ignores external URLs, anchors, and links inside code fences', async () =>
 test('delivery-flow evaluates every supported route before it is published', async () => {
   const evaluationPath = join(repositoryPath, 'skills', 'delivery-flow', 'evals', 'evals.json');
   const evaluation = JSON.parse(await readFile(evaluationPath, 'utf8'));
-  const routeNames = evaluation.evals.map(({ route }) => route);
+  const expectedRoutes = [
+    ['clear-feature', ['intake', 'build', 'verify', 'done']],
+    ['narrow-bug-fix', ['intake', 'build', 'verify', 'done']],
+    ['high-risk-blocked', ['intake', 'clarify', 'blocked']],
+    ['high-risk-approved', ['intake', 'clarify', 'build', 'verify', 'blocked']],
+    ['regression-proof', ['intake', 'prove-regression', 'done']],
+    ['mod-evaluation', ['intake', 'evaluate-mod', 'done']],
+    ['skill-assessment', ['intake', 'assess-skill', 'done']]
+  ];
 
-  assert.deepEqual(routeNames, [
-    'clear-feature',
-    'narrow-bug-fix',
-    'high-risk-change',
-    'regression-proof',
-    'mod-evaluation',
-    'skill-assessment'
+  assert.deepEqual(
+    evaluation.evals.map(({ route, expected_states: expectedStates }) => [route, expectedStates]),
+    expectedRoutes
+  );
+
+  for (const { expectations } of evaluation.evals) {
+    assert.ok(expectations.some(expectation => expectation.includes('stops')));
+  }
+
+  for (const { prompt } of evaluation.trigger.positive) {
+    assert.match(prompt, /^Use delivery-flow\b/);
+  }
+});
+
+test('delivery-flow requires an explicit Codex invocation and prepares host-visible handoffs', async () => {
+  const skillPath = join(repositoryPath, 'skills', 'delivery-flow');
+  const [skill, policy] = await Promise.all([
+    readFile(join(skillPath, 'SKILL.md'), 'utf8'),
+    readFile(join(skillPath, 'agents', 'openai.yaml'), 'utf8')
   ]);
 
-  for (const evaluationCase of evaluation.evals) {
-    assert.ok(Array.isArray(evaluationCase.expected_states));
-    assert.ok(evaluationCase.expected_states.length >= 3);
-    assert.ok(evaluationCase.expectations.some(expectation => expectation.includes('stops')));
-  }
+  assert.match(policy, /allow_implicit_invocation:\s*false/);
+  assert.match(skill, /Prepare an explicit next-stage prompt and handoff record/);
+  assert.doesNotMatch(skill, /hand the actual diff and evidence to/);
 });

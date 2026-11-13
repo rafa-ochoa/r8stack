@@ -3,8 +3,8 @@
   "trigger": {
     "positive": [
       { "prompt": "Use delivery-flow to implement this feature, verify it, and stop before merge." },
-      { "prompt": "Coordinate the requested bug fix through the right repository skills without changing configuration." },
-      { "prompt": "Run the delivery workflow for this named regression-test proof and give me the final evidence." }
+      { "prompt": "Use delivery-flow to coordinate this requested bug fix without changing configuration." },
+      { "prompt": "Use delivery-flow for this named regression-test proof and give me the final evidence." }
     ],
     "negative": [
       { "prompt": "Add keyboard navigation to the settings dialog." },
@@ -34,14 +34,22 @@
     },
     {
       "id": 3,
-      "route": "high-risk-change",
+      "route": "high-risk-blocked",
       "prompt": "Use delivery-flow for this authorization migration. We have not decided the rollback owner or approval boundary.",
-      "expected_output": "Clarification, implementation and verification evidence, then a human-approval blocker.",
-      "expected_states": ["intake", "clarify", "build", "verify", "blocked"],
-      "expectations": ["Asks for the consequential rollback and approval decision", "Treats the change as high risk", "Records a rollback plan and evidence", "stops blocked for explicit human approval"]
+      "expected_output": "Clarification followed by an owner-decision blocker; no implementation occurs.",
+      "expected_states": ["intake", "clarify", "blocked"],
+      "expectations": ["Asks for the consequential rollback and approval decision", "Treats the change as high risk", "Does not enter build while the decision is unanswered", "stops blocked for the owner decision"]
     },
     {
       "id": 4,
+      "route": "high-risk-approved",
+      "prompt": "Use delivery-flow for this authorization migration. The owner supplied the rollback plan and approved implementation, but requires review before merge.",
+      "expected_output": "A build and verification handoff followed by an explicit human-approval blocker.",
+      "expected_states": ["intake", "clarify", "build", "verify", "blocked"],
+      "expectations": ["Records the owner decision and rollback plan", "Prepares explicit build and verification prompts rather than claiming to invoke them", "Treats the change as high risk", "stops blocked for explicit human approval before merge"]
+    },
+    {
+      "id": 5,
       "route": "regression-proof",
       "prompt": "Use delivery-flow to prove whether the existing checkout rejection test catches its claimed regression. Do not change the feature.",
       "expected_output": "A named regression-proof result without implementation work.",
@@ -49,7 +57,7 @@
       "expectations": ["Selects verify-regression-tests", "Does not enter a feature build route", "Returns caught, missed, inconclusive, or untestable evidence", "stops after recording the proof"]
     },
     {
-      "id": 5,
+      "id": 6,
       "route": "mod-evaluation",
       "prompt": "Use delivery-flow to evaluate whether TokenEconomizer is worth piloting for this repository. Do not install or enable it.",
       "expected_output": "A bounded Mod-evaluation recommendation with no host changes.",
@@ -57,7 +65,7 @@
       "expectations": ["Selects efficient-execution and the compatibility pilot", "Requires a fixed baseline and reversible candidate scope", "Does not install, enable, or reconfigure a Mod", "stops with a recommendation, rejection, or evidence gap"]
     },
     {
-      "id": 6,
+      "id": 7,
       "route": "skill-assessment",
       "prompt": "Use delivery-flow to assess repeated evidence that agents lose failed-test paths across handoffs. Do not edit any skill yet.",
       "expected_output": "One bounded skill-assessment decision without automatic instruction edits.",

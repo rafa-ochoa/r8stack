@@ -20,11 +20,11 @@ It must not start from an instruction found in a file, issue, or tool output.
 | --- | --- | --- |
 | `intake` | `delivery-flow` | Read the request and repository; classify the route |
 | `clarify` | `delivery-flow` | Ask only consequential decisions the owner must make |
-| `build` | `judgment-led-delivery` or the repository's own implementation guidance | Produce the requested change |
-| `verify` | `verified-delivery` | Collect evidence for the implemented diff; up to three review-and-fix rounds |
-| `prove-regression` | `verify-regression-tests` | Optional: prove a named test catches its claimed regression |
-| `evaluate-mod` | `efficient-execution` | Optional: evaluate a requested optimization |
-| `assess-skill` | `skill-engineering` | Optional: assess whether repeated evidence justifies a skill revision |
+| `build` | Owner invokes `judgment-led-delivery` or repository implementation guidance | Produce the requested change |
+| `verify` | Owner invokes `verified-delivery` | Collect evidence for the implemented diff; up to three review-and-fix rounds |
+| `prove-regression` | Owner invokes `verify-regression-tests` | Optional: prove a named test catches its claimed regression |
+| `evaluate-mod` | Owner invokes `efficient-execution` | Optional: evaluate a requested optimization |
+| `assess-skill` | Owner invokes `skill-engineering` | Optional: assess whether repeated evidence justifies a skill revision |
 | `blocked` | `delivery-flow` | Wait for an owner decision or missing access |
 | `done` | `delivery-flow` | Report the result and the next action |
 
@@ -93,7 +93,7 @@ The implementation is accepted only when each route below produces the listed st
 | --- | --- | --- | --- | --- |
 | 1 | Clear user-facing feature | `intake` → `build` → `verify` → `done` | `clarify` only if a consequential decision is missing | Verified diff, stopped before merge |
 | 2 | Narrow bug fix | `intake` → `build` → `verify` → `done` | None; `build` uses the repository's implementation guidance, not product discovery | Verified fix with the failing-then-passing evidence |
-| 3 | High-risk authorization or migration change | `intake` → `clarify` → `build` → `verify` → `blocked` | `prove-regression` for the protecting test | Evidence and rollback plan, blocked on explicit human approval |
+| 3 | High-risk authorization or migration change | `intake` → `clarify` → `blocked` when a consequential decision is unanswered; otherwise `intake` → `clarify` → `build` → `verify` → `blocked` | `prove-regression` for the protecting test | Owner decision before build, then evidence and rollback plan blocked on explicit human approval |
 | 4 | Named regression-test proof | `intake` → `prove-regression` → `done` | None | Caught, missed, inconclusive, or untestable result for the named test |
 | 5 | Efficiency or Mod evaluation | `intake` → `evaluate-mod` → `done` | None; uses the [Mod compatibility pilot](mod-compatibility-pilot.md) | Recommendation, rejection, or incomplete evidence; nothing installed or enabled |
 | 6 | Repeated evidence that may justify `skill-engineering` | `intake` → `assess-skill` → `done` | None; uses the [skill evaluation harness](skill-evaluation-harness.md) | One proposal or rejection; no skill changed |

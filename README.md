@@ -34,7 +34,7 @@ Three companion documents turn that workflow into repeatable evidence:
 Use delivery-flow to implement this feature. Stop before merge.
 ```
 
-[`delivery-flow`](skills/delivery-flow/README.md) coordinates this flow when you explicitly invoke it. Expect it to:
+[`delivery-flow`](skills/delivery-flow/README.md) coordinates this flow when you explicitly invoke it. It prepares each explicit next-stage prompt and handoff; it does not load or run another skill. Expect it to:
 
 1. Inspect the request and repository, then select only the relevant skills rather than running a fixed five-stage loop.
 2. Advance to `verified-delivery` only after an implemented diff exists; run regression-test proof only when named coverage matters; evaluate Mods only when an optimization is requested.
