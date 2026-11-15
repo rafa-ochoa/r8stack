@@ -8,7 +8,7 @@ Seven focused skills help coding agents build useful changes, establish real evi
 
 ![r8stack engineering system](docs/assets/r8stack-system.svg)
 
-The solid components in the diagram are available in this repository today. The opt-in evaluation comparison runner now checks fixed, repeated baseline/candidate observations; agent-provider adapters remain deliberately out of scope until they can preserve complete evidence. The learning policy, versioned evaluation format, and human approval gate are documented and enforced by the catalog.
+The diagram shows the capabilities available in this repository and identifies planned automation. The opt-in evaluation comparison runner now checks fixed, repeated baseline/candidate observations; agent-provider adapters remain deliberately out of scope until they can preserve complete evidence. The learning policy, versioned evaluation format, and human approval gate are documented and enforced by the catalog.
 
 ## How the skills fit together
 
