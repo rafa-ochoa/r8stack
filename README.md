@@ -6,13 +6,11 @@
 
 Seven focused skills help coding agents build useful changes, establish real evidence, prevent repeated failures, and stop safely. They work with Codex, Claude Code, and other compatible coding agents. Install one when it fits, or install the collection.
 
-![r8stack engineering system](docs/assets/r8stack-system.svg)
+![Map of all seven r8stack skills: optional delivery-flow prepares handoffs, judgment-led-delivery builds, verified-delivery checks the diff, and four supporting skills handle test proof, guardrails, efficiency and skill revisions. External actions require owner authorization.](docs/assets/r8stack-system.svg)
 
-The diagram shows the capabilities available in this repository and identifies planned automation. The opt-in evaluation comparison runner now checks fixed, repeated baseline/candidate observations; agent-provider adapters remain deliberately out of scope until they can preserve complete evidence. The learning policy, versioned evaluation format, and human approval gate are documented and enforced by the catalog.
+All seven skills in the map are available in this repository. The opt-in evaluation comparison runner now checks fixed, repeated baseline/candidate observations; agent-provider adapters remain deliberately out of scope until they can preserve complete evidence. The learning policy, versioned evaluation format, and human approval gate are documented and enforced by the catalog.
 
 ## How the skills fit together
-
-![How r8stack fits together](docs/assets/skills-map.svg)
 
 The main path is deliberately small:
 
@@ -41,7 +39,7 @@ Read [the Claude execution workflow](docs/claude-execution-workflow.md) for the 
 Three companion documents turn that workflow into repeatable evidence:
 
 - [Mod compatibility pilot](docs/mod-compatibility-pilot.md): a fill-in record and test scenarios for trialling an external Mod on a real host.
-- [Skill evaluation harness](docs/skill-evaluation-harness.md): the specification for a future opt-in runner that compares skill revisions against fixed prompts.
+- [Skill evaluation harness](docs/skill-evaluation-harness.md): the observation format and opt-in comparison runner for fixed baseline/candidate evaluations.
 - [delivery-flow acceptance criteria](docs/delivery-flow-spec.md): the states, handoffs, and route matrix the coordinator satisfies.
 
 ### Planned Mod and dashboard layer
@@ -49,8 +47,6 @@ Three companion documents turn that workflow into repeatable evidence:
 The intended local-first extension is a read-only savings dashboard followed by independently auditable, opt-in Mods for context handoff, browser/output reduction, input routing, effort and model recommendations, and cache decisions. None of these Mods or the dashboard is installed or enabled by this catalog today. The [Mod compatibility pilot](docs/mod-compatibility-pilot.md) defines the evidence and rollback requirement before any external plugin is adopted.
 
 ### Single-entry orchestration
-
-![r8 delivery flow: select only the stages the work needs](docs/assets/claude-execution-flow.svg)
 
 ```text
 Use delivery-flow to implement this feature. Stop before merge.
@@ -65,71 +61,33 @@ Use delivery-flow to implement this feature. Stop before merge.
 
 The coordinator is optional: use an individual skill whenever its narrower scope is enough. The [workflow guide](docs/claude-execution-workflow.md) defines the shared gates and boundaries.
 
-## Execution, learning, and trust
+## From a diff to a reviewable handoff
 
-![End-to-end execution](docs/assets/end-to-end-execution.svg)
+![Delivery evidence: verify the implemented revision, return confirmed defects to implementation for at most three review-and-fix rounds, and hand off the exact revision, command results, flow evidence, risks and rollback. Code changes require fresh affected checks. Owner authorization is required for external actions.](docs/assets/end-to-end-execution.svg)
 
-![Learning loop](docs/assets/learning-loop.svg)
+`verified-delivery` checks the implemented change and records what the evidence supports. A confirmed defect returns to implementation when edits are authorized. Missing evidence remains explicit; a verdict does not authorize commit, push, merge or deployment.
 
-![Trust model](docs/assets/trust-model.svg)
+## What happens after a recurring failure
 
-The diagrams are editable SVG source committed with the project. They document boundaries rather than promising automatic execution: an agent may prepare work and evidence, but the owner authorizes consequential external changes.
+![Recurring failure decision: fix product or tooling defects with enforceable-guardrails; assess repeated reasoning failures with skill-engineering using fixed baseline/candidate evaluations and at least three recorded runs per side. Human approval is required before promotion.](docs/assets/learning-loop.svg)
+
+`enforceable-guardrails` protects the boundary where a failure occurs. `skill-engineering` assesses repeated reasoning failures after checking whether the fix belongs in code or tooling. The comparison runner consumes recorded observations; it does not execute an agent. Agent-provider adapters remain unimplemented.
+
+The diagrams are editable SVG source. They describe skill responsibilities and evidence handoffs, not an automatically executed pipeline.
 
 ## Skills in this collection
 
-### [Judgment-led delivery](skills/judgment-led-delivery/README.md)
+Each skill is independently installable. Its README includes usage and installation instructions.
 
-![Judgment-led delivery: Decide, Build, Refine, Verify](skills/judgment-led-delivery/cover.svg)
-
-**Build what's worth building. Know when not to.**
-
-Helps coding agents assess whether a product change is useful before implementing it. The skill examines existing behavior, weighs meaningful alternatives, builds working interactions when appropriate, and verifies the user experience against actual evidence. It adapts to the task instead of requiring a heavyweight process.
-
-### [Verified delivery](skills/verified-delivery/README.md)
-
-![Verified delivery: Establish, Verify, Review, Release](skills/verified-delivery/cover.svg)
-
-**Prove a change works before asking someone to merge it.**
-
-Helps coding agents turn an implemented diff into evidence-backed, review-ready delivery. It selects risk-sensitive verification, validates independent review findings, limits review-and-fix work to three rounds, and documents rollback readiness and required approval. It complements Judgment-led delivery rather than repeating product discovery or implementation guidance.
-
-### [Verify regression tests](skills/verify-regression-tests/README.md)
-
-![Verify regression tests: Working, Broken version, Restored](skills/verify-regression-tests/cover.svg)
-
-**Prove a test detects the regression it claims to prevent.**
-
-Helps coding agents prove that regression tests detect the behavior they claim to protect. It safely breaks a named production behavior in an isolated copy and requires an assertion-level failure before calling that coverage proof. It complements both delivery skills with focused regression-test evidence.
-
-### [Efficient execution](skills/efficient-execution/README.md)
-
-![Efficient execution: Optimize without weakening verification](skills/efficient-execution/cover.svg)
-
-**Optimize agent execution without weakening correctness.**
-
-Helps coding agents assess context compression, model and effort routing, handoffs, browser payloads, caching, and loop-control Mods. It requires measurable baselines, reversible trials, preserved delivery evidence, and explicit approval before any plugin is installed or activated.
-
-### [Skill engineering](skills/skill-engineering/README.md)
-
-![Skill engineering: Evaluate improvements against fixed evidence](skills/skill-engineering/cover.svg)
-
-**Improve skills from evidence, not endless rewrites.**
-
-Helps coding agents decide whether recurring delivery evidence warrants a focused skill revision, compare it against fixed evaluations, and stop with a proposal, rejection, or inconclusive result. It keeps application fixes and tooling improvements ahead of generic instruction churn.
-
-### [Enforceable guardrails](skills/enforceable-guardrails/README.md)
-
-**Make the repeated failure impossible or detectable at the right boundary.**
-
-Helps coding agents turn attributable recurring failures into a narrow product invariant, type, test, lint rule, CI check, or repository validator. It requires positive and negative proof, and records evidence without replacing a root-cause fix with generic instructions.
-
-### [Delivery flow](skills/delivery-flow/README.md)
-
-![Delivery flow: choose the needed path, preserve evidence, stop safely](skills/delivery-flow/cover.svg)
-
-**Coordinate only the stages the task needs.**
-
-Helps coding agents select and connect the catalog's delivery skills for an explicitly requested workflow. It preserves handoff evidence, routes narrow tasks without ceremony, and stops before any merge, publish, installation, or host-configuration action.
+| Skill | Use it for | Result |
+| --- | --- | --- |
+| [judgment-led-delivery](skills/judgment-led-delivery/README.md) | Scoping and implementing a user-facing change | A working interaction with relevant behavior and UX checks |
+| [verified-delivery](skills/verified-delivery/README.md) | Verifying an implemented diff | Revision-bound evidence, validated findings, risks and a readiness verdict |
+| [verify-regression-tests](skills/verify-regression-tests/README.md) | Proving a named test catches its protected bug | The same test run against working, faithfully broken and restored code in isolation |
+| [enforceable-guardrails](skills/enforceable-guardrails/README.md) | Preventing a demonstrated failure at its root cause | A narrow executable check with unsafe-rejected and valid-accepted proof |
+| [efficient-execution](skills/efficient-execution/README.md) | Evaluating an execution optimization or Mod | A measured recommendation that preserves quality, evidence and rollback |
+| [skill-engineering](skills/skill-engineering/README.md) | Assessing a skill revision after repeated reasoning failures | One bounded proposal or rejection based on fixed evaluations |
+| [delivery-flow](skills/delivery-flow/README.md) | Coordinating explicitly requested stages | A next-stage prompt and intact handoff record; no automatic skill invocation |
 
 ## Install the collection
 

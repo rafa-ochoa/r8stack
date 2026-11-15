@@ -1,17 +1,48 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="1200" height="680" role="img" aria-labelledby="title description">
-  <title id="title">r8stack end-to-end execution</title>
-  <desc id="description">A request moves through decision, planning, implementation and verification to an owner-controlled delivery decision, carrying evidence at every stage.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="760" viewBox="0 0 880 760" role="img" aria-labelledby="title description">
+  <title id="title">From a diff to a reviewable handoff</title>
+  <desc id="description">An implemented diff is verified through repository checks, real behavior and validated review findings. A confirmed defect returns to implementation when edits are authorized, with at most three review-and-fix rounds. The handoff carries revision-bound evidence and risks. Owner authorization remains required for commit, push, merge, deployment and publication.</desc>
   <defs>
-    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#101426"/><stop offset="100%" stop-color="#080c18"/></linearGradient>
-    <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#65dfd6"/><stop offset="50%" stop-color="#85cafa"/><stop offset="100%" stop-color="#a786ff"/></linearGradient>
-    <radialGradient id="glow"><stop offset="0%" stop-color="#42d7c6" stop-opacity=".24"/><stop offset="100%" stop-color="#42d7c6" stop-opacity="0"/></radialGradient>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#101426" />
+      <stop offset="100%" stop-color="#080c18" />
+    </linearGradient>
   </defs>
-  <rect width="1200" height="680" fill="url(#background)"/>
-  <circle cx="1040" cy="102" r="340" fill="url(#glow)"/><circle cx="155" cy="580" r="245" fill="url(#glow)" opacity=".3"/>
-  <path d="M62 38h1076M62 640h1076" stroke="#64708c" stroke-opacity=".28"/>
-  <text x="62" y="88" fill="#c9f7f0" font-size="23" font-family="Arial,Helvetica,sans-serif" font-weight="700" letter-spacing="1">r8stack</text>
-  <text x="1138" y="88" fill="#c3ccdf" font-size="15" font-family="Arial,Helvetica,sans-serif" font-weight="700" letter-spacing="2" text-anchor="end">EXECUTION</text>
-  <text x="62" y="167.2" fill="#ffffff" font-size="60" font-family="Arial,Helvetica,sans-serif" font-weight="800" letter-spacing="-1.8">End-to-end execution</text><text x="64" y="210.89999999999998" fill="#bcc7dd" font-size="23" font-family="Arial,Helvetica,sans-serif" >Each stage hands evidence to the next. Delivery stays with the owner.</text>
-  <rect x="62" y="260" width="169.33333333333334" height="230" rx="22" fill="#193439" stroke="#71dbce" stroke-opacity="0.7" stroke-width="1.8"/><circle cx="98" cy="296" r="18" fill="#81e1d2"/><text x="98" y="303" fill="#151827" font-size="18" font-family="Arial,Helvetica,sans-serif" font-weight="800" text-anchor="middle">1</text><text x="80" y="355" fill="#ffffff" font-size="19" font-family="Arial,Helvetica,sans-serif" font-weight="800">REQUEST</text><text x="80" y="391.8" fill="#dce2f0" font-size="16" font-family="Arial,Helvetica,sans-serif" >Intent and limits</text><rect x="243.33333333333334" y="260" width="169.33333333333334" height="230" rx="22" fill="#243148" stroke="#85cafa" stroke-opacity="0.7" stroke-width="1.8"/><circle cx="279.33333333333337" cy="296" r="18" fill="#8fcbff"/><text x="279.33333333333337" y="303" fill="#151827" font-size="18" font-family="Arial,Helvetica,sans-serif" font-weight="800" text-anchor="middle">2</text><text x="261.33333333333337" y="355" fill="#ffffff" font-size="19" font-family="Arial,Helvetica,sans-serif" font-weight="800">DECIDE</text><text x="261.33333333333337" y="391.8" fill="#dce2f0" font-size="16" font-family="Arial,Helvetica,sans-serif" >Worth building?</text><text x="261.33333333333337" y="412.6" fill="#dce2f0" font-size="16" font-family="Arial,Helvetica,sans-serif" >Alternatives</text><rect x="424.6666666666667" y="260" width="169.33333333333334" height="230" rx="22" fill="#222441" stroke="#a992ff" stroke-opacity="0.7" stroke-width="1.8"/><circle cx="460.6666666666667" cy="296" r="18" fill="#a992ff"/><text x="460.6666666666667" y="303" fill="#151827" font-size="18" font-family="Arial,Helvetica,sans-serif" font-weight="800" text-anchor="middle">3</text><text x="442.6666666666667" y="355" fill="#ffffff" font-size="19" font-family="Arial,Helvetica,sans-serif" font-weight="800">PLAN</text><text x="442.6666666666667" y="391.8" fill="#dce2f0" font-size="16" font-family="Arial,Helvetica,sans-serif" >Risk and user</text><text x="442.6666666666667" y="412.6" fill="#dce2f0" font-size="16" font-family="Arial,Helvetica,sans-serif" >flows</text><rect x="606" y="260" width="169.33333333333334" height="230" rx="22" fill="#193439" stroke="#71dbce" stroke-opacity="0.7" stroke-width="1.8"/><circle cx="642" cy="296" r="18" fill="#81e1d2"/><text x="642" y="303" fill="#151827" font-size="18" font-family="Arial,Helvetica,sans-serif" font-weight="800" text-anchor="middle">4</text><text x="624" y="355" fill="#ffffff" font-size="19" font-family="Arial,Helvetica,sans-serif" font-weight="800">IMPLEMENT</text><text x="624" y="391.8" fill="#dce2f0" font-size="16" font-family="Arial,Helvetica,sans-serif" >A working diff</text><rect x="787.3333333333334" y="260" width="169.33333333333334" height="230" rx="22" fill="#243148" stroke="#85cafa" stroke-opacity="0.7" stroke-width="1.8"/><circle cx="823.3333333333334" cy="296" r="18" fill="#8fcbff"/><text x="823.3333333333334" y="303" fill="#151827" font-size="18" font-family="Arial,Helvetica,sans-serif" font-weight="800" text-anchor="middle">5</text><text x="805.3333333333334" y="355" fill="#ffffff" font-size="19" font-family="Arial,Helvetica,sans-serif" font-weight="800">VERIFY</text><text x="805.3333333333334" y="391.8" fill="#dce2f0" font-size="16" font-family="Arial,Helvetica,sans-serif" >Checks and</text><text x="805.3333333333334" y="412.6" fill="#dce2f0" font-size="16" font-family="Arial,Helvetica,sans-serif" >artifacts</text><rect x="968.6666666666667" y="260" width="169.33333333333334" height="230" rx="22" fill="#38253c" stroke="#ffabcb" stroke-opacity="0.7" stroke-width="1.8"/><circle cx="1004.6666666666667" cy="296" r="18" fill="#ffabcb"/><text x="1004.6666666666667" y="303" fill="#151827" font-size="18" font-family="Arial,Helvetica,sans-serif" font-weight="800" text-anchor="middle">6</text><text x="986.6666666666667" y="355" fill="#ffffff" font-size="19" font-family="Arial,Helvetica,sans-serif" font-weight="800">DELIVER</text><text x="986.6666666666667" y="391.8" fill="#dce2f0" font-size="16" font-family="Arial,Helvetica,sans-serif" >Owner decision</text><path d="M1053.3333333333335 502 Q600.0000000000001 538 146.66666666666669 502" fill="none" stroke="url(#edge)" stroke-width="3" stroke-dasharray="9 9" stroke-linecap="round"/><text x="600.0000000000001" y="564" fill="#c9d2e7" font-size="17" font-family="Arial,Helvetica,sans-serif" text-anchor="middle" font-weight="700" letter-spacing="2.6">EVIDENCE FOLLOWS THE WORK</text>
-  <text x="62" y="618" fill="#9aa6c0" font-size="16" font-family="Arial,Helvetica,sans-serif" >Implemented: skills, optional delivery-flow, checks and feature-map artifacts.</text>
+  <rect x="0" y="0" width="880" height="760" fill="url(#background)" />
+  <text x="44" y="60" font-family="Arial,Helvetica,sans-serif" font-size="34" font-weight="700" fill="#f7f8ff">From a diff to a reviewable handoff</text>
+  <text x="44" y="103" font-family="Arial,Helvetica,sans-serif" font-size="26" font-weight="400" fill="#cbd4eb">Verify the implemented revision.</text>
+  <rect x="44" y="155" width="220" height="225" fill="#193439" id="implement" stroke="#71dbce" stroke-width="1.5" />
+  <rect x="330" y="155" width="220" height="225" fill="#243148" id="verify" stroke="#85cafa" stroke-width="1.5" />
+  <rect x="616" y="155" width="220" height="225" fill="#222441" id="handoff" stroke="#a992ff" stroke-width="1.5" />
+  <text x="64" y="201" font-family="Arial,Helvetica,sans-serif" font-size="31" font-weight="700" fill="#f7f8ff">Working diff</text>
+  <text x="64" y="250" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="400" fill="#cbd4eb">Goal + limits</text>
+  <text x="64" y="287" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="400" fill="#cbd4eb">Changed flows</text>
+  <text x="64" y="324" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="400" fill="#cbd4eb">Decisions</text>
+  <text x="350" y="201" font-family="Arial,Helvetica,sans-serif" font-size="31" font-weight="700" fill="#9bcfff">Verify</text>
+  <text x="350" y="250" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="400" fill="#cbd4eb">Repo checks</text>
+  <text x="350" y="287" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="400" fill="#cbd4eb">Real behavior</text>
+  <text x="350" y="324" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="400" fill="#cbd4eb">Review findings</text>
+  <text x="636" y="201" font-family="Arial,Helvetica,sans-serif" font-size="31" font-weight="700" fill="#f7f8ff">Handoff</text>
+  <text x="636" y="250" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="400" fill="#cbd4eb">Revision + results</text>
+  <text x="636" y="287" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="400" fill="#cbd4eb">Flows + artifacts</text>
+  <text x="636" y="324" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="400" fill="#cbd4eb">Risks + rollback</text>
+  <g id="implement-verify">
+    <polyline points="264,270 318,270" fill="none" stroke="#85cafa" stroke-width="2.5" stroke-linejoin="round" />
+    <polygon points="330,270 318,275 318,265" fill="#85cafa" />
+  </g>
+  <g id="verify-handoff">
+    <polyline points="550,270 604,270" fill="none" stroke="#a992ff" stroke-width="2.5" stroke-linejoin="round" />
+    <polygon points="616,270 604,275 604,265" fill="#a992ff" />
+  </g>
+  <g id="verify-implement">
+    <polyline points="440,380 440,423 154,423 154,392" fill="none" stroke="#ffabcb" stroke-width="2.5" stroke-linejoin="round" />
+    <polygon points="154,380 159,392 149,392" fill="#ffabcb" />
+  </g>
+  <text x="297" y="459" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="400" fill="#ffabcb" text-anchor="middle">Confirmed defect</text>
+  <text x="44" y="505" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="400" fill="#ffabcb">Stop after 3 review-and-fix rounds or an owner-needed blocker.</text>
+  <rect x="44" y="540" width="792" height="86" fill="#243148" id="revision-note" stroke="#85cafa" stroke-width="1.5" />
+  <text x="64" y="574" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="700" fill="#f7f8ff">Code changed?</text>
+  <text x="64" y="606" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="400" fill="#cbd4eb">Keep prior results labeled; rerun the affected checks.</text>
+  <rect x="44" y="656" width="792" height="82" fill="#38253c" id="authorization" stroke="#ffabcb" stroke-width="1.5" />
+  <text x="64" y="690" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="700" fill="#ffabcb">Owner authorization</text>
+  <text x="64" y="724" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="400" fill="#f7f8ff">Commit · push · merge · deploy · publish</text>
 </svg>

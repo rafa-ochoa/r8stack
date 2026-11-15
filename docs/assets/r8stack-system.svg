@@ -1,17 +1,56 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" role="img" aria-labelledby="title description">
-  <title id="title">r8stack engineering system</title>
-  <desc id="description">Product judgment, skills and optional orchestration lead to an owner-approved delivery boundary. Enforceable guardrails, runtime verification and continuous improvement apply across every stage.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="930" viewBox="0 0 880 930" role="img" aria-labelledby="title description">
+  <title id="title">How the seven skills fit</title>
+  <desc id="description">delivery-flow is an explicitly invoked, optional coordinator. For delivery work, judgment-led-delivery builds a diff, verified-delivery establishes evidence, and the owner authorizes external actions. The four supporting skills are selected only when their task applies; they are not a required pipeline.</desc>
   <defs>
-    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#101426"/><stop offset="100%" stop-color="#080c18"/></linearGradient>
-    <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#65dfd6"/><stop offset="50%" stop-color="#85cafa"/><stop offset="100%" stop-color="#a786ff"/></linearGradient>
-    <radialGradient id="glow"><stop offset="0%" stop-color="#42d7c6" stop-opacity=".24"/><stop offset="100%" stop-color="#42d7c6" stop-opacity="0"/></radialGradient>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#101426" />
+      <stop offset="100%" stop-color="#080c18" />
+    </linearGradient>
   </defs>
-  <rect width="1200" height="900" fill="url(#background)"/>
-  <circle cx="1040" cy="102" r="340" fill="url(#glow)"/><circle cx="155" cy="800" r="245" fill="url(#glow)" opacity=".3"/>
-  <path d="M62 38h1076M62 860h1076" stroke="#64708c" stroke-opacity=".28"/>
-  <text x="62" y="88" fill="#c9f7f0" font-size="23" font-family="Arial,Helvetica,sans-serif" font-weight="700" letter-spacing="1">r8stack</text>
-  <text x="1138" y="88" fill="#c3ccdf" font-size="15" font-family="Arial,Helvetica,sans-serif" font-weight="700" letter-spacing="2" text-anchor="end">SYSTEM</text>
-  <text x="62" y="167.2" fill="#ffffff" font-size="60" font-family="Arial,Helvetica,sans-serif" font-weight="800" letter-spacing="-1.8">Six capabilities, one boundary</text><text x="64" y="210.89999999999998" fill="#bcc7dd" font-size="23" font-family="Arial,Helvetica,sans-serif" >AI engineering that gets more reliable with every iteration.</text>
-  <rect x="62" y="255" width="250" height="266" rx="22" fill="#243148" stroke="#85cafa" stroke-opacity="0.7" stroke-width="1.8"/><circle cx="102" cy="295" r="18" fill="#8fcbff"/><text x="102" y="302" fill="#151827" font-size="18" font-family="Arial,Helvetica,sans-serif" font-weight="800" text-anchor="middle">1</text><text x="84" y="356" fill="#ffffff" font-size="21" font-family="Arial,Helvetica,sans-serif" font-weight="800">PRODUCT</text><text x="84" y="383" fill="#ffffff" font-size="21" font-family="Arial,Helvetica,sans-serif" font-weight="800">JUDGMENT</text><text x="84" y="422.4" fill="#dce2f0" font-size="18" font-family="Arial,Helvetica,sans-serif" >Smallest valuable</text><text x="84" y="445.79999999999995" fill="#dce2f0" font-size="18" font-family="Arial,Helvetica,sans-serif" >outcome</text><text x="84" y="499" fill="#85cafa" font-size="14" font-family="Arial,Helvetica,sans-serif" font-weight="700" letter-spacing="1.5">IMPLEMENTED</text><rect x="337" y="255" width="250" height="266" rx="22" fill="#193439" stroke="#71dbce" stroke-opacity="0.7" stroke-width="1.8"/><circle cx="377" cy="295" r="18" fill="#81e1d2"/><text x="377" y="302" fill="#151827" font-size="18" font-family="Arial,Helvetica,sans-serif" font-weight="800" text-anchor="middle">2</text><text x="359" y="356" fill="#ffffff" font-size="21" font-family="Arial,Helvetica,sans-serif" font-weight="800">SKILLS</text><text x="359" y="395.4" fill="#dce2f0" font-size="18" font-family="Arial,Helvetica,sans-serif" >Seven focused,</text><text x="359" y="418.79999999999995" fill="#dce2f0" font-size="18" font-family="Arial,Helvetica,sans-serif" >installable skills</text><text x="359" y="499" fill="#71dbce" font-size="14" font-family="Arial,Helvetica,sans-serif" font-weight="700" letter-spacing="1.5">IMPLEMENTED</text><rect x="612" y="255" width="250" height="266" rx="22" fill="#222441" stroke="#a992ff" stroke-opacity="0.7" stroke-width="1.8"/><circle cx="652" cy="295" r="18" fill="#a992ff"/><text x="652" y="302" fill="#151827" font-size="18" font-family="Arial,Helvetica,sans-serif" font-weight="800" text-anchor="middle">3</text><text x="634" y="356" fill="#ffffff" font-size="21" font-family="Arial,Helvetica,sans-serif" font-weight="800">ORCHESTRATION</text><text x="634" y="395.4" fill="#dce2f0" font-size="18" font-family="Arial,Helvetica,sans-serif" >Explicit handoffs between</text><text x="634" y="418.79999999999995" fill="#dce2f0" font-size="18" font-family="Arial,Helvetica,sans-serif" >stages</text><text x="634" y="499" fill="#a992ff" font-size="14" font-family="Arial,Helvetica,sans-serif" font-weight="700" letter-spacing="1.5">IMPLEMENTED · OPTIONAL</text><rect x="888" y="255" width="250" height="266" rx="22" fill="#38253c" stroke="#ffabcb" stroke-opacity="0.7" stroke-width="1.8"/><circle cx="928" cy="295" r="18" fill="#ffabcb"/><text x="928" y="302" fill="#151827" font-size="18" font-family="Arial,Helvetica,sans-serif" font-weight="800" text-anchor="middle">4</text><text x="910" y="356" fill="#ffffff" font-size="21" font-family="Arial,Helvetica,sans-serif" font-weight="800">DELIVERY</text><text x="910" y="395.4" fill="#dce2f0" font-size="18" font-family="Arial,Helvetica,sans-serif" >Owner approves every</text><text x="910" y="418.79999999999995" fill="#dce2f0" font-size="18" font-family="Arial,Helvetica,sans-serif" >external change</text><text x="910" y="499" fill="#ffabcb" font-size="14" font-family="Arial,Helvetica,sans-serif" font-weight="700" letter-spacing="1.5">BOUNDARY</text><path d="M315 380h17m-7-7 7 7-7 7" fill="none" stroke="#d4dcf3" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M590 380h17m-7-7 7 7-7 7" fill="none" stroke="#d4dcf3" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M866 380h17m-7-7 7 7-7 7" fill="none" stroke="#d4dcf3" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><text x="600" y="557" fill="#c9d2e7" font-size="15" font-family="Arial,Helvetica,sans-serif" text-anchor="middle" font-weight="700" letter-spacing="2.6">APPLIED ACROSS EVERY STAGE</text><rect x="62" y="581" width="342" height="200" rx="22" fill="#193439" stroke="#71dbce" stroke-opacity="0.7" stroke-width="1.8"/><text x="86" y="629" fill="#ffffff" font-size="24" font-family="Arial,Helvetica,sans-serif" font-weight="800">ENFORCEABLE</text><text x="86" y="659" fill="#ffffff" font-size="24" font-family="Arial,Helvetica,sans-serif" font-weight="800">GUARDRAILS</text><text x="86" y="698.4" fill="#dce2f0" font-size="18" font-family="Arial,Helvetica,sans-serif" >Repeated failures become checks</text><text x="86" y="757" fill="#71dbce" font-size="14" font-family="Arial,Helvetica,sans-serif" font-weight="700" letter-spacing="1.5">IMPLEMENTED</text><rect x="429" y="581" width="342" height="200" rx="22" fill="#243148" stroke="#85cafa" stroke-opacity="0.7" stroke-width="1.8"/><text x="453" y="629" fill="#ffffff" font-size="24" font-family="Arial,Helvetica,sans-serif" font-weight="800">RUNTIME</text><text x="453" y="659" fill="#ffffff" font-size="24" font-family="Arial,Helvetica,sans-serif" font-weight="800">VERIFICATION</text><text x="453" y="698.4" fill="#dce2f0" font-size="18" font-family="Arial,Helvetica,sans-serif" >Evidence bound to the exact</text><text x="453" y="721.8" fill="#dce2f0" font-size="18" font-family="Arial,Helvetica,sans-serif" >revision</text><text x="453" y="757" fill="#85cafa" font-size="14" font-family="Arial,Helvetica,sans-serif" font-weight="700" letter-spacing="1.5">IMPLEMENTED</text><rect x="796" y="581" width="342" height="200" rx="22" fill="#222441" stroke="#a992ff" stroke-opacity="0.7" stroke-width="1.8"/><text x="820" y="629" fill="#ffffff" font-size="24" font-family="Arial,Helvetica,sans-serif" font-weight="800">CONTINUOUS</text><text x="820" y="659" fill="#ffffff" font-size="24" font-family="Arial,Helvetica,sans-serif" font-weight="800">IMPROVEMENT</text><text x="820" y="698.4" fill="#dce2f0" font-size="18" font-family="Arial,Helvetica,sans-serif" >Fixed evals, baseline vs candidate</text><text x="820" y="757" fill="#a992ff" font-size="14" font-family="Arial,Helvetica,sans-serif" font-weight="700" letter-spacing="1.5">RUNNER BUILT · RUNS MANUAL</text>
-  <text x="62" y="838" fill="#9aa6c0" font-size="16" font-family="Arial,Helvetica,sans-serif" >Everything shown is in the repository. Automated agent runs for evaluations are planned.</text>
+  <rect x="0" y="0" width="880" height="930" fill="url(#background)" />
+  <text x="44" y="60" font-family="Arial,Helvetica,sans-serif" font-size="34" font-weight="700" fill="#f7f8ff">How the seven skills fit</text>
+  <rect x="44" y="106" width="792" height="96" fill="#222441" id="coordinator" stroke="#a992ff" stroke-width="1.5" stroke-dasharray="7 5" />
+  <text x="68" y="144" font-family="'Courier New',monospace" font-size="28" font-weight="700" fill="#bcaaff">delivery-flow</text>
+  <text x="68" y="180" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="400" fill="#cbd4eb">Optional: prepares the next prompt and handoff.</text>
+  <rect x="44" y="254" width="220" height="178" fill="#193439" id="build" stroke="#71dbce" stroke-width="1.5" />
+  <rect x="330" y="254" width="220" height="178" fill="#243148" id="verify" stroke="#85cafa" stroke-width="1.5" />
+  <rect x="616" y="254" width="220" height="178" fill="#38253c" id="owner" stroke="#ffabcb" stroke-width="1.5" />
+  <text x="68" y="297" font-family="Arial,Helvetica,sans-serif" font-size="34" font-weight="700" fill="#81e1d2">Build</text>
+  <text x="68" y="340" font-family="'Courier New',monospace" font-size="22" font-weight="400" fill="#f7f8ff">judgment-led-</text>
+  <text x="68" y="371" font-family="'Courier New',monospace" font-size="22" font-weight="400" fill="#f7f8ff">delivery</text>
+  <text x="354" y="297" font-family="Arial,Helvetica,sans-serif" font-size="34" font-weight="700" fill="#9bcfff">Verify</text>
+  <text x="354" y="340" font-family="'Courier New',monospace" font-size="22" font-weight="400" fill="#f7f8ff">verified-</text>
+  <text x="354" y="371" font-family="'Courier New',monospace" font-size="22" font-weight="400" fill="#f7f8ff">delivery</text>
+  <text x="640" y="297" font-family="Arial,Helvetica,sans-serif" font-size="34" font-weight="700" fill="#ffabcb">Approve</text>
+  <text x="640" y="340" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="400" fill="#f7f8ff">Owner</text>
+  <text x="640" y="371" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="400" fill="#f7f8ff">authorization</text>
+  <g id="coordinator-build">
+    <polyline points="154,202 154,242" fill="none" stroke="#a992ff" stroke-width="2.5" stroke-linejoin="round" stroke-dasharray="7 5" />
+    <polygon points="154,254 149,242 159,242" fill="#a992ff" />
+  </g>
+  <g id="build-verify">
+    <polyline points="264,343 318,343" fill="none" stroke="#d4dcf3" stroke-width="2.5" stroke-linejoin="round" />
+    <polygon points="330,343 318,348 318,338" fill="#d4dcf3" />
+  </g>
+  <g id="verify-owner">
+    <polyline points="550,343 604,343" fill="none" stroke="#ffabcb" stroke-width="2.5" stroke-linejoin="round" />
+    <polygon points="616,343 604,348 604,338" fill="#ffabcb" />
+  </g>
+  <text x="297" y="323" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="400" fill="#cbd4eb" text-anchor="middle">diff</text>
+  <text x="583" y="323" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="400" fill="#cbd4eb" text-anchor="middle">results</text>
+  <text x="44" y="485" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="700" fill="#f7f8ff">Use supporting skills when needed</text>
+  <path d="M44 514 L836 514" fill="none" stroke="#64708c" stroke-width="1.5" />
+  <text x="44" y="549" font-family="'Courier New',monospace" font-size="27" font-weight="700" fill="#ffabcb">verify-regression-tests</text>
+  <text x="44" y="583" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="400" fill="#cbd4eb">Prove a named test catches its bug.</text>
+  <path d="M44 604 L836 604" fill="none" stroke="#64708c" stroke-width="1.5" />
+  <text x="44" y="639" font-family="'Courier New',monospace" font-size="27" font-weight="700" fill="#81e1d2">enforceable-guardrails</text>
+  <text x="44" y="673" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="400" fill="#cbd4eb">Prevent a failure at its root cause.</text>
+  <path d="M44 694 L836 694" fill="none" stroke="#64708c" stroke-width="1.5" />
+  <text x="44" y="729" font-family="'Courier New',monospace" font-size="27" font-weight="700" fill="#65dfd6">efficient-execution</text>
+  <text x="44" y="763" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="400" fill="#cbd4eb">Evaluate an optimization without losing evidence.</text>
+  <path d="M44 784 L836 784" fill="none" stroke="#64708c" stroke-width="1.5" />
+  <text x="44" y="819" font-family="'Courier New',monospace" font-size="27" font-weight="700" fill="#bcaaff">skill-engineering</text>
+  <text x="44" y="853" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="400" fill="#cbd4eb">Evaluate a skill revision after repeated failures.</text>
+  <path d="M44 878 L836 878" fill="none" stroke="#64708c" stroke-width="1.5" />
+  <text x="44" y="910" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="400" fill="#cbd4eb">Arrows show handoffs. Skills do not invoke each other.</text>
 </svg>

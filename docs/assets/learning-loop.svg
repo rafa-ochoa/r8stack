@@ -1,17 +1,71 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="1200" height="700" role="img" aria-labelledby="title description">
-  <title id="title">r8stack learning loop</title>
-  <desc id="description">A repeated, attributable failure is traced to its root cause, turned into a narrow proposal, evaluated against a fixed baseline, and promoted only with human approval.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="1000" viewBox="0 0 880 1000" role="img" aria-labelledby="title description">
+  <title id="title">Choose the root-cause layer</title>
+  <desc id="description">Start from repeated, attributable failures. Fix deterministic product or tooling defects with enforceable-guardrails and prove unsafe rejection and valid acceptance. For repeated reasoning failures, skill-engineering compares a baseline and one candidate against fixed cases with at least three recorded runs per side. The comparison runner consumes manually recorded observations. A human decides; there is no automatic promotion.</desc>
   <defs>
-    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#101426"/><stop offset="100%" stop-color="#080c18"/></linearGradient>
-    <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#65dfd6"/><stop offset="50%" stop-color="#85cafa"/><stop offset="100%" stop-color="#a786ff"/></linearGradient>
-    <radialGradient id="glow"><stop offset="0%" stop-color="#42d7c6" stop-opacity=".24"/><stop offset="100%" stop-color="#42d7c6" stop-opacity="0"/></radialGradient>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#101426" />
+      <stop offset="100%" stop-color="#080c18" />
+    </linearGradient>
   </defs>
-  <rect width="1200" height="700" fill="url(#background)"/>
-  <circle cx="1040" cy="102" r="340" fill="url(#glow)"/><circle cx="155" cy="600" r="245" fill="url(#glow)" opacity=".3"/>
-  <path d="M62 38h1076M62 660h1076" stroke="#64708c" stroke-opacity=".28"/>
-  <text x="62" y="88" fill="#c9f7f0" font-size="23" font-family="Arial,Helvetica,sans-serif" font-weight="700" letter-spacing="1">r8stack</text>
-  <text x="1138" y="88" fill="#c3ccdf" font-size="15" font-family="Arial,Helvetica,sans-serif" font-weight="700" letter-spacing="2" text-anchor="end">LEARNING LOOP</text>
-  <text x="62" y="167.2" fill="#ffffff" font-size="60" font-family="Arial,Helvetica,sans-serif" font-weight="800" letter-spacing="-1.8">Learning loop</text><text x="64" y="210.89999999999998" fill="#bcc7dd" font-size="23" font-family="Arial,Helvetica,sans-serif" >Repeated failures become measured, human-approved improvements.</text>
-  <rect x="62" y="255" width="196" height="250" rx="22" fill="#38253c" stroke="#ffabcb" stroke-opacity="0.7" stroke-width="1.8"/><circle cx="100" cy="293" r="18" fill="#ffabcb"/><text x="100" y="300" fill="#151827" font-size="18" font-family="Arial,Helvetica,sans-serif" font-weight="800" text-anchor="middle">1</text><text x="82" y="353" fill="#ffffff" font-size="20" font-family="Arial,Helvetica,sans-serif" font-weight="800">FAILURE</text><text x="82" y="391.1" fill="#dce2f0" font-size="17" font-family="Arial,Helvetica,sans-serif" >Repeated and</text><text x="82" y="413.20000000000005" fill="#dce2f0" font-size="17" font-family="Arial,Helvetica,sans-serif" >attributable</text><rect x="282" y="255" width="196" height="250" rx="22" fill="#243148" stroke="#85cafa" stroke-opacity="0.7" stroke-width="1.8"/><circle cx="320" cy="293" r="18" fill="#8fcbff"/><text x="320" y="300" fill="#151827" font-size="18" font-family="Arial,Helvetica,sans-serif" font-weight="800" text-anchor="middle">2</text><text x="302" y="353" fill="#ffffff" font-size="20" font-family="Arial,Helvetica,sans-serif" font-weight="800">ROOT CAUSE</text><text x="302" y="391.1" fill="#dce2f0" font-size="17" font-family="Arial,Helvetica,sans-serif" >Product, tooling or</text><text x="302" y="413.20000000000005" fill="#dce2f0" font-size="17" font-family="Arial,Helvetica,sans-serif" >skill</text><rect x="502" y="255" width="196" height="250" rx="22" fill="#222441" stroke="#a992ff" stroke-opacity="0.7" stroke-width="1.8"/><circle cx="540" cy="293" r="18" fill="#a992ff"/><text x="540" y="300" fill="#151827" font-size="18" font-family="Arial,Helvetica,sans-serif" font-weight="800" text-anchor="middle">3</text><text x="522" y="353" fill="#ffffff" font-size="20" font-family="Arial,Helvetica,sans-serif" font-weight="800">PROPOSAL</text><text x="522" y="391.1" fill="#dce2f0" font-size="17" font-family="Arial,Helvetica,sans-serif" >One narrow</text><text x="522" y="413.20000000000005" fill="#dce2f0" font-size="17" font-family="Arial,Helvetica,sans-serif" >hypothesis</text><rect x="722" y="255" width="196" height="250" rx="22" fill="#193439" stroke="#71dbce" stroke-opacity="0.7" stroke-width="1.8"/><circle cx="760" cy="293" r="18" fill="#81e1d2"/><text x="760" y="300" fill="#151827" font-size="18" font-family="Arial,Helvetica,sans-serif" font-weight="800" text-anchor="middle">4</text><text x="742" y="353" fill="#ffffff" font-size="20" font-family="Arial,Helvetica,sans-serif" font-weight="800">EVALUATION</text><text x="742" y="391.1" fill="#dce2f0" font-size="17" font-family="Arial,Helvetica,sans-serif" >Baseline vs</text><text x="742" y="413.20000000000005" fill="#dce2f0" font-size="17" font-family="Arial,Helvetica,sans-serif" >candidate, 3+ runs</text><text x="742" y="435.30000000000007" fill="#dce2f0" font-size="17" font-family="Arial,Helvetica,sans-serif" >each</text><text x="742" y="485" fill="#71dbce" font-size="14" font-family="Arial,Helvetica,sans-serif" font-weight="700" letter-spacing="1.5">RUNS: MANUAL</text><rect x="942" y="255" width="196" height="250" rx="22" fill="#193439" stroke="#71dbce" stroke-opacity="0.7" stroke-width="1.8"/><circle cx="980" cy="293" r="18" fill="#81e1d2"/><text x="980" y="300" fill="#151827" font-size="18" font-family="Arial,Helvetica,sans-serif" font-weight="800" text-anchor="middle">5</text><text x="962" y="353" fill="#ffffff" font-size="20" font-family="Arial,Helvetica,sans-serif" font-weight="800">APPROVAL</text><text x="962" y="391.1" fill="#dce2f0" font-size="17" font-family="Arial,Helvetica,sans-serif" >A person promotes</text><text x="962" y="413.20000000000005" fill="#dce2f0" font-size="17" font-family="Arial,Helvetica,sans-serif" >or rejects</text><path d="M261 335h17m-7-7 7 7-7 7" fill="none" stroke="#d4dcf3" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M481 335h17m-7-7 7 7-7 7" fill="none" stroke="#d4dcf3" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M701 335h17m-7-7 7 7-7 7" fill="none" stroke="#d4dcf3" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M921 335h17m-7-7 7 7-7 7" fill="none" stroke="#d4dcf3" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M1040 517 Q600 553 160 517" fill="none" stroke="url(#edge)" stroke-width="3" stroke-dasharray="9 9" stroke-linecap="round"/><text x="600" y="579" fill="#c9d2e7" font-size="17" font-family="Arial,Helvetica,sans-serif" text-anchor="middle" font-weight="700" letter-spacing="2.6">EVIDENCE CHANGES THE SYSTEM ONLY WITH APPROVAL</text>
-  <text x="62" y="638" fill="#9aa6c0" font-size="16" font-family="Arial,Helvetica,sans-serif" >Implemented: evaluation policy, versioned eval sets, comparison runner. Planned: automated agent runs.</text>
+  <rect x="0" y="0" width="880" height="1000" fill="url(#background)" />
+  <text x="44" y="60" font-family="Arial,Helvetica,sans-serif" font-size="34" font-weight="700" fill="#f7f8ff">Choose the root-cause layer</text>
+  <rect x="44" y="110" width="792" height="100" fill="#38253c" id="failure" stroke="#ffabcb" stroke-width="1.5" />
+  <text x="68" y="151" font-family="Arial,Helvetica,sans-serif" font-size="30" font-weight="700" fill="#f7f8ff">Repeated, attributable failure</text>
+  <text x="68" y="186" font-family="Arial,Helvetica,sans-serif" font-size="26" font-weight="400" fill="#cbd4eb">Record the task, observed harm and evidence.</text>
+  <text x="44" y="250" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="400" fill="#cbd4eb">One-off mistake? Record it.</text>
+  <text x="44" y="280" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="400" fill="#cbd4eb">Missing owner decision? Ask.</text>
+  <text x="462" y="270" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="400" fill="#85cafa">Choose the cause</text>
+  <text x="44" y="326" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="400" fill="#cbd4eb">Code / tooling</text>
+  <text x="670" y="326" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="400" fill="#cbd4eb">Reasoning</text>
+  <rect x="44" y="338" width="370" height="452" fill="#193439" id="guardrail" stroke="#71dbce" stroke-width="1.5" />
+  <rect x="466" y="338" width="370" height="452" fill="#222441" id="skill" stroke="#a992ff" stroke-width="1.5" />
+  <text x="68" y="384" font-family="Arial,Helvetica,sans-serif" font-size="31" font-weight="700" fill="#81e1d2">Root-cause fix</text>
+  <text x="68" y="425" font-family="'Courier New',monospace" font-size="24" font-weight="700" fill="#81e1d2">enforceable-guardrails</text>
+  <text x="68" y="488" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="400" fill="#cbd4eb">Fix code or tooling.</text>
+  <text x="68" y="528" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="400" fill="#cbd4eb">Add a narrow check.</text>
+  <path d="M68 559 L390 559" fill="none" stroke="#64708c" stroke-width="1.5" />
+  <text x="68" y="604" font-family="Arial,Helvetica,sans-serif" font-size="26" font-weight="400" fill="#cbd4eb">Reject the unsafe case.</text>
+  <text x="68" y="644" font-family="Arial,Helvetica,sans-serif" font-size="26" font-weight="400" fill="#cbd4eb">Accept the valid case.</text>
+  <text x="68" y="749" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="700" fill="#f7f8ff">A fix with proven protection</text>
+  <text x="490" y="384" font-family="Arial,Helvetica,sans-serif" font-size="31" font-weight="700" fill="#bcaaff">Skill evaluation</text>
+  <text x="490" y="425" font-family="'Courier New',monospace" font-size="24" font-weight="700" fill="#bcaaff">skill-engineering</text>
+  <text x="490" y="466" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="400" fill="#cbd4eb">One candidate. Fixed cases.</text>
+  <rect x="490" y="500" width="146" height="90" fill="#243148" id="baseline" stroke="#85cafa" stroke-width="1.5" />
+  <rect x="666" y="500" width="146" height="90" fill="#30284e" id="candidate" stroke="#a992ff" stroke-width="1.5" />
+  <text x="504" y="535" font-family="Arial,Helvetica,sans-serif" font-size="26" font-weight="700" fill="#9bcfff">Baseline</text>
+  <text x="680" y="535" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="700" fill="#bcaaff">Candidate</text>
+  <text x="504" y="574" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="400" fill="#cbd4eb">3+ runs</text>
+  <text x="680" y="574" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="400" fill="#cbd4eb">3+ runs</text>
+  <rect x="490" y="640" width="322" height="90" fill="#243148" id="comparison" stroke="#85cafa" stroke-width="1.5" />
+  <text x="506" y="676" font-family="Arial,Helvetica,sans-serif" font-size="26" font-weight="700" fill="#85cafa">Compare fixed cases</text>
+  <text x="506" y="710" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="400" fill="#cbd4eb">Report regressions or gaps.</text>
+  <text x="490" y="768" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="700" fill="#f7f8ff">One evaluation decision</text>
+  <rect x="44" y="855" width="792" height="93" fill="#38253c" id="decision" stroke="#ffabcb" stroke-width="1.5" />
+  <text x="68" y="893" font-family="Arial,Helvetica,sans-serif" font-size="29" font-weight="700" fill="#ffabcb">Independent human approval</text>
+  <text x="68" y="929" font-family="Arial,Helvetica,sans-serif" font-size="26" font-weight="400" fill="#f7f8ff">Approve or reject. No automatic promotion.</text>
+  <g id="failure-guardrail">
+    <polyline points="440,210 440,306 229,306 229,326" fill="none" stroke="#71dbce" stroke-width="2.5" stroke-linejoin="round" />
+    <polygon points="229,338 224,326 234,326" fill="#71dbce" />
+  </g>
+  <g id="failure-skill">
+    <polyline points="440,210 440,306 651,306 651,326" fill="none" stroke="#a992ff" stroke-width="2.5" stroke-linejoin="round" />
+    <polygon points="651,338 646,326 656,326" fill="#a992ff" />
+  </g>
+  <g id="baseline-comparison">
+    <polyline points="563,590 563,614 651,614 651,628" fill="none" stroke="#85cafa" stroke-width="2.5" stroke-linejoin="round" />
+    <polygon points="651,640 646,628 656,628" fill="#85cafa" />
+  </g>
+  <g id="candidate-comparison">
+    <polyline points="739,590 739,614 651,614 651,628" fill="none" stroke="#a992ff" stroke-width="2.5" stroke-linejoin="round" />
+    <polygon points="651,640 646,628 656,628" fill="#a992ff" />
+  </g>
+  <g id="guardrail-decision">
+    <polyline points="229,790 229,824 440,824 440,843" fill="none" stroke="#ffabcb" stroke-width="2.5" stroke-linejoin="round" />
+    <polygon points="440,855 435,843 445,843" fill="#ffabcb" />
+  </g>
+  <g id="skill-decision">
+    <polyline points="651,790 651,824 440,824 440,843" fill="none" stroke="#ffabcb" stroke-width="2.5" stroke-linejoin="round" />
+    <polygon points="440,855 435,843 445,843" fill="#ffabcb" />
+  </g>
+  <text x="44" y="981" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="400" fill="#cbd4eb">Runner available; agent observations are recorded manually.</text>
 </svg>
