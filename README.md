@@ -173,6 +173,5 @@ Skills are organized under `skills/`. See [CONTRIBUTING.md](CONTRIBUTING.md) for
 
 The system direction and prior design inputs are reconciled in [r8stack's decision record](docs/r8stack.md).
 
-Use the reusable [adversarial review instructions](docs/adversarial-review.md) when an independent challenge of a completed change is needed before human acceptance.
 
 [MIT License](LICENSE)
