@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 790" width="1200" height="790" role="img" aria-labelledby="title description">
-  <title id="title">How r8-skills fit together</title>
+  <title id="title">How r8stack fits together</title>
   <desc id="description">The main delivery path runs from an explicitly requested coordinator through product delivery and verification, with regression proof, execution evaluation, and skill improvement as bounded optional branches.</desc>
   <defs>
     <linearGradient id="background" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#101426"/><stop offset="100%" stop-color="#080c18"/></linearGradient>
@@ -10,7 +10,7 @@
   <rect width="1200" height="790" fill="url(#background)"/>
   <circle cx="1070" cy="100" r="345" fill="url(#glow)"/><circle cx="140" cy="670" r="270" fill="url(#glow)" opacity=".35"/>
   <path d="M62 38h1076M62 748h1076" stroke="#64708c" stroke-opacity=".28"/>
-  <text x="62" y="88" fill="#d5c9ff" font-size="23" font-family="Arial,Helvetica,sans-serif" letter-spacing="1" font-weight="700">r8-skills</text>
+  <text x="62" y="88" fill="#d5c9ff" font-size="23" font-family="Arial,Helvetica,sans-serif" letter-spacing="1" font-weight="700">r8stack</text>
   <text x="1138" y="88" fill="#c3ccdf" text-anchor="end" font-size="15" font-family="Arial,Helvetica,sans-serif" letter-spacing="2" font-weight="700">HOW THE SKILLS FIT TOGETHER</text>
   <text x="62" y="154" fill="#ffffff" font-size="48" font-family="Arial,Helvetica,sans-serif" font-weight="800">From a request to trustworthy delivery</text>
   <text x="64" y="191" fill="#bcc7dd" font-size="20" font-family="Arial,Helvetica,sans-serif">Use one focused skill—or an explicit coordinator that prepares the next handoff.</text>

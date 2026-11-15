@@ -1,6 +1,6 @@
 # Skill evaluation harness
 
-This document specifies a small, opt-in harness that can later run each skill's fixed prompts against a chosen agent and compare a candidate skill revision with its baseline. It is a specification only: **no model runner is implemented in this catalog**, and no CI job calls a model.
+This document specifies an opt-in harness for comparing a candidate skill revision with its baseline. The catalog includes a deterministic comparison runner; it validates fixed evaluation coverage, requires repeated observations, detects regressions, and writes a review artifact. It does **not** execute an agent or call a model, and no CI job calls a model.
 
 What already exists and runs in CI is deterministic: `node scripts/validate-skill-evaluations.mjs` guarantees every skill ships a well-formed prompt set with unique, stable evaluation IDs. A future runner depends on that guarantee instead of re-validating prompts itself.
 
@@ -20,6 +20,16 @@ Each skill's prompt set is its `skills/<skill-name>/evals/evals.json`:
 A prompt set version is the git commit of that file. A comparison names it as `<skill-name>@<commit>`, and a single case as `<skill-name>@<commit>#<id>`. Never renumber or reuse an `id` for a different case; add a new one and retire the old.
 
 A candidate skill revision must be evaluated against the prompt set from **before** the revision. Removing or weakening a case in the same change as the candidate invalidates the comparison (see the second `skill-engineering` evaluation).
+
+## Recording agent observations
+
+An agent-specific adapter or a human reviewer records each run before using the comparison runner. Every side needs at least three runs. Each run must record every fixed evaluation exactly once with one of these outcomes:
+
+- `met` — the evidence supports the expectation;
+- `not-met` — the evidence contradicts it;
+- `unclear` — the artifact cannot establish it.
+
+The adapter is deliberately outside this catalog until it can preserve the fixture, transcript, tool calls, and provider settings described below. It must not convert missing credentials or incomplete transcripts into `met`.
 
 ## Fixed repository fixture
 
@@ -41,6 +51,22 @@ The runner records only what can be checked afterwards:
 - whether the skill was invoked (for routing cases).
 
 `expectations` are written as observable statements so a reviewer can mark each one met, not met, or unclear from these artifacts alone.
+
+## Deterministic comparison runner
+
+Run the comparison after baseline and candidate observations have been recorded:
+
+```bash
+node scripts/evaluate-skill.mjs \
+  --skill skill-engineering \
+  --evaluation skills/skill-engineering/evals/evals.json \
+  --evaluation-revision <fixed-evaluation-commit-sha> \
+  --baseline-results artifacts/evals/baseline.json \
+  --candidate-results artifacts/evals/candidate.json \
+  --output artifacts/evals/comparison.json
+```
+
+The runner rejects a candidate when a stable baseline `met` becomes anything other than `met`. Differing outcomes across repetitions are `inconclusive`. A result with no regression is still `human-review-required`; the runner never edits a skill, commits, merges, publishes, installs, or enables anything.
 
 ## Human review step
 

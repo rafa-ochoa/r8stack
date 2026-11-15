@@ -9,7 +9,7 @@
   <rect width="1200" height="630" fill="url(#background)"/>
   <circle cx="1050" cy="105" r="345" fill="url(#glow)"/><circle cx="145" cy="535" r="250" fill="url(#glow)" opacity=".3"/>
   <path d="M62 38h1076M62 590h1076" stroke="#64708c" stroke-opacity=".28"/>
-  <text x="62" y="88" fill="#f5c9de" font-size="23" font-family="Arial,Helvetica,sans-serif" letter-spacing="1" font-weight="700">r8-skills</text>
+  <text x="62" y="88" fill="#f5c9de" font-size="23" font-family="Arial,Helvetica,sans-serif" letter-spacing="1" font-weight="700">r8stack</text>
   <text x="1138" y="88" fill="#c3ccdf" text-anchor="end" font-size="15" font-family="Arial,Helvetica,sans-serif" letter-spacing="2" font-weight="700">03 / REGRESSION PROOF</text>
   <text x="62" y="167" fill="#ffffff" font-size="56" font-family="Arial,Helvetica,sans-serif" font-weight="800" letter-spacing="-1.8">Verify regression tests</text>
   <text x="64" y="210" fill="#bcc7dd" font-size="23" font-family="Arial,Helvetica,sans-serif">A green test is a claim. The intended failure is evidence.</text>

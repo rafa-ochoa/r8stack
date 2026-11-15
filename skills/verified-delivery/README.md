@@ -24,7 +24,7 @@ The workflow is risk-sensitive, not a mandatory ceremony. Routine low-risk edits
 Install **only verified-delivery** globally for Codex and Claude Code:
 
 ```bash
-npx skills add rafa-ochoa/r8-skills --skill verified-delivery -g -a codex -a claude-code -y
+npx skills add rafa-ochoa/r8stack --skill verified-delivery -g -a codex -a claude-code -y
 ```
 
 Requires Node.js 22.20 or later. Remove `-g` for a project-only install. To install the entire collection, see the [main README](../../README.md#install-the-collection).

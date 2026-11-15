@@ -5,6 +5,8 @@ import { join } from 'node:path';
 import test from 'node:test';
 
 import { validateSkillEvaluations } from '../scripts/validate-skill-evaluations.mjs';
+import { validateFeatureMap } from '../scripts/validate-feature-map.mjs';
+import { compareSkillEvaluations } from '../scripts/evaluate-skill.mjs';
 
 const repositoryPath = join(import.meta.dirname, '..');
 
@@ -51,7 +53,7 @@ async function writeSkill(catalogPath, skillName, evaluation) {
 }
 
 async function createCatalog(evaluation = validEvaluation) {
-  const catalogPath = await mkdtemp(join(tmpdir(), 'r8-skills-'));
+  const catalogPath = await mkdtemp(join(tmpdir(), 'r8stack-'));
 
   await writeSkill(catalogPath, 'example-skill', evaluation);
   await writeSkill(catalogPath, 'judgment-led-delivery', comparedEvaluation);
@@ -280,3 +282,79 @@ test('delivery-flow requires an explicit Codex invocation and prepares host-visi
   assert.match(skill, /Prepare an explicit next-stage prompt and handoff record/);
   assert.doesNotMatch(skill, /hand the actual diff and evidence to/);
 });
+
+test('accepts a reproducible feature map with current-revision evidence', () => {
+  const violations = validateFeatureMap({
+    feature: 'Saved searches',
+    revision: '0123456789abcdef0123456789abcdef01234567',
+    risk: 'medium',
+    flows: [
+      {
+        id: 'save-search',
+        outcome: 'A signed-in user can save a search.',
+        criticality: 'high',
+        verification: [
+          { kind: 'test', command: 'npm test -- saved-search', status: 'passed' },
+          { kind: 'trace', path: 'artifacts/saved-search.trace.zip', status: 'recorded' }
+        ]
+      }
+    ]
+  });
+
+  assert.deepEqual(violations, []);
+});
+
+test('rejects a feature map that claims an unrecorded screenshot passed', () => {
+  const violations = validateFeatureMap({
+    feature: 'Saved searches',
+    revision: '0123456789abcdef0123456789abcdef01234567',
+    risk: 'medium',
+    flows: [{
+      id: 'save-search',
+      outcome: 'A signed-in user can save a search.',
+      criticality: 'high',
+      verification: [{ kind: 'screenshot', path: 'artifacts/saved-search.png', status: 'passed' }]
+    }]
+  });
+
+  assert.deepEqual(violations, [
+    'flows[0].verification[0] screenshot evidence must use status recorded, unavailable, or not-applicable'
+  ]);
+});
+
+test('rejects a candidate skill when it regresses a stable baseline expectation', () => {
+  const comparison = compareSkillEvaluations({
+    skillName: 'example-skill',
+    evaluationRevision: '0123456789abcdef0123456789abcdef01234567',
+    evaluation: validEvaluation,
+    baseline: repeatedResults('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', ['met', 'met', 'met']),
+    candidate: repeatedResults('bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb', ['met', 'met', 'met'], { 1: 'not-met' })
+  });
+
+  assert.equal(comparison.verdict, 'reject');
+  assert.deepEqual(comparison.regressions, [{ id: 1, baseline: 'met', candidate: 'not-met' }]);
+  assert.equal(comparison.approval_required, true);
+});
+
+test('requires human review even when a candidate has no evaluation regression', () => {
+  const comparison = compareSkillEvaluations({
+    skillName: 'example-skill',
+    evaluationRevision: '0123456789abcdef0123456789abcdef01234567',
+    evaluation: validEvaluation,
+    baseline: repeatedResults('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', ['met', 'met', 'met']),
+    candidate: repeatedResults('bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb', ['met', 'met', 'met'])
+  });
+
+  assert.equal(comparison.verdict, 'human-review-required');
+  assert.deepEqual(comparison.regressions, []);
+  assert.equal(comparison.approval_required, true);
+});
+
+function repeatedResults(revision, outcomes, caseOutcomes = {}) {
+  return {
+    revision,
+    runs: outcomes.map(outcome => ({
+      cases: validEvaluation.evals.map(({ id }) => ({ id, outcome: caseOutcomes[id] ?? outcome }))
+    }))
+  };
+}

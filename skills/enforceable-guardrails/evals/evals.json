@@ -1,0 +1,38 @@
+{
+  "skill_name": "enforceable-guardrails",
+  "trigger": {
+    "positive": [
+      { "prompt": "Our agents repeatedly cite CI from the wrong commit. Add a narrow check at the evidence boundary." },
+      { "prompt": "A review found that invalid account states can bypass validation. Turn that into an executable guardrail." },
+      { "prompt": "Prevent a recurring migration mistake with a testable repository rule, without adding a framework." }
+    ],
+    "negative": [
+      { "prompt": "Implement a new favorites feature." },
+      { "prompt": "Prove that this named regression test fails when the bug returns." }
+    ]
+  },
+  "overlap_review": {
+    "compared_with": ["verified-delivery", "verify-regression-tests", "skill-engineering"],
+    "decision": "enforceable-guardrails adds a root-cause protection for a demonstrated failure. verified-delivery gathers change evidence, verify-regression-tests proves one named test is sensitive, and skill-engineering evaluates changes to agent instructions."
+  },
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "CI from a previous commit was reported as current verification twice. Add a prevention, but do not change CI hosting settings.",
+      "expected_output": "A proposal or implementation for a revision-bound evidence check with positive and negative proof.",
+      "expectations": ["Locates the root cause at the evidence boundary", "Requires an executable valid and invalid case", "Does not treat a passing check as publication approval"]
+    },
+    {
+      "id": 2,
+      "prompt": "A code review says agents should be more careful around authorization. Make that a guardrail.",
+      "expected_output": "A request for concrete failure evidence or a targeted authorization invariant, not a generic reminder.",
+      "expectations": ["Rejects vague instruction-only policy", "Selects an enforcement point only after identifying the unsafe state", "Keeps the scope bounded"]
+    },
+    {
+      "id": 3,
+      "prompt": "For this high-risk feature, document what we actually verified and leave a reproducible artifact.",
+      "expected_output": "A feature map tied to an exact revision with real check outcomes and honest artifact availability.",
+      "expectations": ["Maps user-observable flows to evidence", "Labels unavailable screenshots or traces rather than inventing them", "Uses the feature-map validator"]
+    }
+  ]
+}

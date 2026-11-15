@@ -1,0 +1,24 @@
+{
+  "feature": "Example account recovery change",
+  "revision": "816b68e789abcdef0123456789abcdef01234567",
+  "risk": "high",
+  "flows": [
+    {
+      "id": "recover-account",
+      "outcome": "An account owner can request a recovery link without exposing whether an account exists.",
+      "criticality": "high",
+      "verification": [
+        {
+          "kind": "test",
+          "command": "npm test -- account-recovery",
+          "status": "passed"
+        },
+        {
+          "kind": "screenshot",
+          "path": "artifacts/account-recovery-request.png",
+          "status": "not-applicable"
+        }
+      ]
+    }
+  ]
+}

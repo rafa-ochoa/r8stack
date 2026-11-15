@@ -1,12 +1,18 @@
-# r8-skills
+# r8stack
 
-**Practical, composable skills for real engineering work—not a vague agentic workflow.**
+**An engineering system for AI agents: judgment, enforceable guardrails, real verification, and measured learning.**
 
-Six focused skills help coding agents build useful changes, establish real evidence, and stop safely. They work with Codex, Claude Code, and other compatible coding agents. Install one when it fits, or install the collection.
+`r8stack` is deliberately not a software factory that auto-publishes work: agents execute scoped work, the system makes quality checks enforceable, and humans retain approval over consequential actions.
+
+Seven focused skills help coding agents build useful changes, establish real evidence, prevent repeated failures, and stop safely. They work with Codex, Claude Code, and other compatible coding agents. Install one when it fits, or install the collection.
+
+![r8stack engineering system](docs/assets/r8stack-system.svg)
+
+The solid components in the diagram are available in this repository today. The opt-in evaluation comparison runner now checks fixed, repeated baseline/candidate observations; agent-provider adapters remain deliberately out of scope until they can preserve complete evidence. The learning policy, versioned evaluation format, and human approval gate are documented and enforced by the catalog.
 
 ## How the skills fit together
 
-![How r8-skills fit together](docs/assets/skills-map.svg)
+![How r8stack fits together](docs/assets/skills-map.svg)
 
 The main path is deliberately small:
 
@@ -19,7 +25,14 @@ Use the supporting skills only for their narrow jobs:
 - [`verify-regression-tests`](skills/verify-regression-tests/README.md) proves a named test catches the behavior it protects.
 - [`efficient-execution`](skills/efficient-execution/README.md) evaluates an optimization without weakening delivery evidence.
 - [`skill-engineering`](skills/skill-engineering/README.md) decides whether repeated evidence justifies improving a skill.
+- [`enforceable-guardrails`](skills/enforceable-guardrails/README.md) turns an attributable recurring failure into a narrowly scoped check at its root cause.
 - [`delivery-flow`](skills/delivery-flow/README.md) is an explicit coordinator: it prepares the next prompt and handoff, but does not load or run other skills automatically.
+
+For meaningful-risk changes, keep a reproducible feature map: exact revision, user-observable flows, verification commands, and available traces or screenshots. The included validator checks its structure without claiming that its recorded commands ran. Start with [`examples/feature-map.json`](examples/feature-map.json):
+
+```bash
+node scripts/validate-feature-map.mjs path/to/feature-map.json
+```
 
 ## Claude Code workflow and Mods
 
@@ -51,6 +64,16 @@ Use delivery-flow to implement this feature. Stop before merge.
 4. Stop with an evidence-backed result, an owner-needed blocker, or before a merge/deploy. It will never treat a passing check as permission to publish.
 
 The coordinator is optional: use an individual skill whenever its narrower scope is enough. The [workflow guide](docs/claude-execution-workflow.md) defines the shared gates and boundaries.
+
+## Execution, learning, and trust
+
+![End-to-end execution](docs/assets/end-to-end-execution.svg)
+
+![Learning loop](docs/assets/learning-loop.svg)
+
+![Trust model](docs/assets/trust-model.svg)
+
+The diagrams are editable SVG source committed with the project. They document boundaries rather than promising automatic execution: an agent may prepare work and evidence, but the owner authorizes consequential external changes.
 
 ## Skills in this collection
 
@@ -94,6 +117,12 @@ Helps coding agents assess context compression, model and effort routing, handof
 
 Helps coding agents decide whether recurring delivery evidence warrants a focused skill revision, compare it against fixed evaluations, and stop with a proposal, rejection, or inconclusive result. It keeps application fixes and tooling improvements ahead of generic instruction churn.
 
+### [Enforceable guardrails](skills/enforceable-guardrails/README.md)
+
+**Make the repeated failure impossible or detectable at the right boundary.**
+
+Helps coding agents turn attributable recurring failures into a narrow product invariant, type, test, lint rule, CI check, or repository validator. It requires positive and negative proof, and records evidence without replacing a root-cause fix with generic instructions.
+
 ### [Delivery flow](skills/delivery-flow/README.md)
 
 ![Delivery flow: choose the needed path, preserve evidence, stop safely](skills/delivery-flow/cover.svg)
@@ -104,10 +133,10 @@ Helps coding agents select and connect the catalog's delivery skills for an expl
 
 ## Install the collection
 
-Install **all skills** in this repository globally for Codex and Claude Code:
+Install **all skills** globally for Codex and Claude Code:
 
 ```bash
-npx skills add rafa-ochoa/r8-skills -g -a codex -a claude-code -y
+npx skills add rafa-ochoa/r8stack -g -a codex -a claude-code -y
 ```
 
 Requires Node.js 22.20 or later. The command selects Codex and Claude Code directly, so there is no agent-selection screen.
@@ -141,5 +170,9 @@ Use `verify-regression-tests` only when you need to establish that a particular 
 ## Contribute
 
 Skills are organized under `skills/`. See [CONTRIBUTING.md](CONTRIBUTING.md) for how to propose one.
+
+The system direction and prior design inputs are reconciled in [r8stack's decision record](docs/r8stack.md).
+
+Use the reusable [adversarial review instructions](docs/adversarial-review.md) when an independent challenge of a completed change is needed before human acceptance.
 
 [MIT License](LICENSE)

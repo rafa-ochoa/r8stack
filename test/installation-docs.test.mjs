@@ -5,7 +5,7 @@ import { dirname, join, relative } from 'node:path';
 import test from 'node:test';
 
 const catalogPath = join(dirname(fileURLToPath(import.meta.url)), '..');
-const repository = 'rafa-ochoa/r8-skills';
+const repository = 'rafa-ochoa/r8stack';
 
 const skillNames = (await readdir(join(catalogPath, 'skills'), { withFileTypes: true }))
   .filter(entry => entry.isDirectory())
@@ -59,15 +59,14 @@ test('every published single-skill update command names an existing skill', asyn
   }
 });
 
-test('active documentation does not reference the former r8a-skills name', async () => {
+test('active documentation does not reference former project names', async () => {
   for (const markdownPath of markdownPaths) {
     const lines = (await readFile(markdownPath, 'utf8')).split('\n');
 
     lines.forEach((line, index) => {
-      const isLabelledHistorical = /historical/i.test(line);
       assert.ok(
-        !line.includes('r8a-skills') || isLabelledHistorical,
-        `${relative(catalogPath, markdownPath)}:${index + 1} references r8a-skills without a historical label`
+        !line.includes('r8a-skills') && !line.includes('r8-skills'),
+        `${relative(catalogPath, markdownPath)}:${index + 1} references a former project name`
       );
     });
   }
