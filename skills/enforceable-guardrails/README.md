@@ -1,6 +1,8 @@
 # Enforceable guardrails
 
-Turn a known failure into a check that prevents it at the right boundary.
+![Enforceable guardrails: Attribute, Locate, Enforce, Prove](cover.svg)
+
+**Turn a known failure into a check that prevents it at the right boundary.**
 
 Install it globally for Codex and Claude Code:
 
@@ -24,4 +26,4 @@ node scripts/validate-feature-map.mjs path/to/feature-map.json
 
 The validator checks that a map has an exact revision and meaningful evidence metadata. It does not execute the recorded commands or pretend unavailable screenshots exist.
 
-[Skill instructions](SKILL.md) · [Evaluations](evals/evals.json)
+[Skill instructions](SKILL.md) · [Root-cause scoping](references/root-cause-scoping.md) · [Evaluations](evals/evals.json)

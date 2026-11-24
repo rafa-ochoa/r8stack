@@ -4,16 +4,21 @@
     "positive": [
       { "prompt": "Our agents repeatedly cite CI from the wrong commit. Add a narrow check at the evidence boundary." },
       { "prompt": "A review found that invalid account states can bypass validation. Turn that into an executable guardrail." },
-      { "prompt": "Prevent a recurring migration mistake with a testable repository rule, without adding a framework." }
+      { "prompt": "Prevent a recurring migration mistake with a testable repository rule, without adding a framework." },
+      { "prompt": "Twice now a handoff record shipped without a revision field. Make that impossible to merge." },
+      { "prompt": "This null-currency bug has reached production three times. Stop it at the source instead of patching each caller." }
     ],
     "negative": [
       { "prompt": "Implement a new favorites feature." },
-      { "prompt": "Prove that this named regression test fails when the bug returns." }
+      { "prompt": "Prove that this named regression test fails when the bug returns." },
+      { "prompt": "Verify this diff and tell me if it is ready for review." },
+      { "prompt": "Our skill keeps routing UI tasks to the wrong stage. Evaluate a revision to its instructions." },
+      { "prompt": "Add a line to CLAUDE.md telling agents to always double-check their work." }
     ]
   },
   "overlap_review": {
-    "compared_with": ["verified-delivery", "verify-regression-tests", "skill-engineering"],
-    "decision": "enforceable-guardrails adds a root-cause protection for a demonstrated failure. verified-delivery gathers change evidence, verify-regression-tests proves one named test is sensitive, and skill-engineering evaluates changes to agent instructions."
+    "compared_with": ["judgment-led-delivery", "verified-delivery", "verify-regression-tests", "skill-engineering"],
+    "decision": "enforceable-guardrails adds a root-cause protection for a demonstrated failure. judgment-led-delivery owns product scope, verified-delivery gathers change evidence, verify-regression-tests proves one named test is sensitive, and skill-engineering evaluates changes to agent instructions. A generic instruction-file reminder belongs to none of them and is declined."
   },
   "evals": [
     {
@@ -33,6 +38,30 @@
       "prompt": "For this high-risk feature, document what we actually verified and leave a reproducible artifact.",
       "expected_output": "A feature map tied to an exact revision with real check outcomes and honest artifact availability.",
       "expectations": ["Maps user-observable flows to evidence", "Labels unavailable screenshots or traces rather than inventing them", "Uses the feature-map validator"]
+    },
+    {
+      "id": 4,
+      "prompt": "Orders with a negative quantity keep reaching the warehouse API. Add a CI script that greps the logs for negative quantities.",
+      "expected_output": "A redirect to a domain invariant at the order input boundary, with a rejecting and an accepting test, instead of a log-scanning CI script.",
+      "expectations": ["Identifies where the invalid quantity enters the product", "Prefers a type or domain validation over a downstream CI check", "Proves an invalid order is rejected and a valid order is accepted through the public interface"]
+    },
+    {
+      "id": 5,
+      "prompt": "Feature maps keep being committed without a revision. Write a new standalone checker for that.",
+      "expected_output": "An extension of the existing feature-map validator, or confirmation it already enforces the rule with proof, rather than a duplicate checker.",
+      "expectations": ["Inspects the existing validator before adding a new script", "Reuses the existing owner of the artifact boundary", "Runs the validator against a missing-revision map and a valid map and records both outcomes"]
+    },
+    {
+      "id": 6,
+      "prompt": "The agent keeps skipping verified-delivery after implementing a change. Add a guardrail so it never happens again.",
+      "expected_output": "A determination that this is an agent reasoning or routing failure, handed to skill-engineering with the recorded occurrences, unless a concrete artifact boundary can reject it.",
+      "expectations": ["Distinguishes an agent reasoning failure from a product or artifact failure", "Does not add an unevaluated rule to a skill or instruction file", "Passes measured evidence to skill-engineering and notes that a human approves any promoted rule"]
+    },
+    {
+      "id": 7,
+      "prompt": "I wrote the guardrail test for duplicate invoice numbers. It looks right, so just mark it passing in the PR description.",
+      "expected_output": "Runs the check against a duplicate and a unique invoice, and reports the actual outcomes and revision instead of an assumed pass.",
+      "expectations": ["Does not report a check as passing without running it", "Records the rejecting and accepting outcomes with the exact revision", "Reports a failing or unrun direction honestly instead of writing that the check passes"]
     }
   ]
 }

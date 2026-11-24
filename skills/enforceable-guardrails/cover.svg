@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-labelledby="title description">
+  <title id="title">Enforceable guardrails: attribute, locate, enforce, prove</title>
+  <desc id="description">A four-step workflow for turning a demonstrated failure into the narrowest executable check at its root cause.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#101426"/><stop offset="100%" stop-color="#080c18"/></linearGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ffb86b"/><stop offset="50%" stop-color="#f692c8"/><stop offset="100%" stop-color="#65dfd6"/></linearGradient>
+    <radialGradient id="glow"><stop offset="0%" stop-color="#ffb86b" stop-opacity=".22"/><stop offset="100%" stop-color="#ffb86b" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#background)"/>
+  <circle cx="1070" cy="90" r="345" fill="url(#glow)"/><circle cx="155" cy="530" r="260" fill="url(#glow)" opacity=".35"/>
+  <path d="M62 38h1076M62 590h1076" stroke="#64708c" stroke-opacity=".28"/>
+  <text x="62" y="88" fill="#ffd9ad" font-size="23" font-family="Arial,Helvetica,sans-serif" letter-spacing="1" font-weight="700">r8stack</text>
+  <text x="1138" y="88" fill="#c3ccdf" text-anchor="end" font-size="15" font-family="Arial,Helvetica,sans-serif" letter-spacing="2" font-weight="700">07 / ROOT-CAUSE PROTECTION</text>
+  <text x="62" y="167" fill="#ffffff" font-size="60" font-family="Arial,Helvetica,sans-serif" font-weight="800" letter-spacing="-1.8">Enforceable guardrails</text>
+  <text x="64" y="210" fill="#bcc7dd" font-size="23" font-family="Arial,Helvetica,sans-serif">Reject the unsafe state where it starts, then prove it.</text>
+  <g stroke-width="1.8"><rect x="60" y="260" width="250" height="238" rx="22" fill="#3a2a22" stroke="#ffb86b" stroke-opacity=".7"/><rect x="337" y="260" width="250" height="238" rx="22" fill="#38253c" stroke="#fa9cc3" stroke-opacity=".7"/><rect x="614" y="260" width="250" height="238" rx="22" fill="#222441" stroke="#9889ff" stroke-opacity=".7"/><rect x="891" y="260" width="250" height="238" rx="22" fill="#193439" stroke="#71dbce" stroke-opacity=".7"/></g>
+  <g><circle cx="98" cy="304" r="20" fill="#ffc07f"/><circle cx="375" cy="304" r="20" fill="#ffabcb"/><circle cx="652" cy="304" r="20" fill="#a992ff"/><circle cx="929" cy="304" r="20" fill="#81e1d2"/></g>
+  <g fill="#151827" font-family="Arial,Helvetica,sans-serif" font-weight="800" font-size="20" text-anchor="middle"><text x="98" y="311">1</text><text x="375" y="311">2</text><text x="652" y="311">3</text><text x="929" y="311">4</text></g>
+  <g fill="#ffffff" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="800"><text x="83" y="376">ATTRIBUTE</text><text x="360" y="376">LOCATE</text><text x="637" y="376">ENFORCE</text><text x="914" y="376">PROVE</text></g>
+  <g fill="#dce2f0" font-family="Arial,Helvetica,sans-serif" font-size="18"><text x="83" y="417">Real occurrences</text><text x="83" y="445">Unsafe state</text><text x="360" y="417">Entry point</text><text x="360" y="445">Owning layer</text><text x="637" y="417">One narrow check</text><text x="637" y="445">Reuse the owner</text><text x="914" y="417">Unsafe rejected</text><text x="914" y="445">Valid accepted</text></g>
+  <g fill="none" stroke="#d4dcf3" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M315 380h17m-7-7 7 7-7 7"/><path d="M592 380h17m-7-7 7 7-7 7"/><path d="M869 380h17m-7-7 7 7-7 7"/></g>
+  <path d="M1018 517 Q603 568 184 517" fill="none" stroke="url(#edge)" stroke-width="3" stroke-dasharray="9 9" stroke-linecap="round"/>
+  <text x="602" y="558" text-anchor="middle" fill="#c9d2e7" font-size="17" font-family="Arial,Helvetica,sans-serif" letter-spacing="2.6" font-weight="700">EVIDENCE · BOUNDARY · PROOF</text>
+</svg>
