@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="880" height="760" viewBox="0 0 880 760" role="img" aria-labelledby="title description">
   <title id="title">From a diff to a reviewable handoff</title>
-  <desc id="description">An implemented diff is verified through repository checks, real behavior and validated review findings. A confirmed defect returns to implementation when edits are authorized, with at most three review-and-fix rounds. The handoff carries revision-bound evidence and risks. Owner authorization remains required for commit, push, merge, deployment and publication.</desc>
+  <desc id="description">Verify real behavior and compare the baseline with the candidate using the same checks when applicable. Organize the handoff by acceptance criterion and link to revision-bound evidence. Record risks, rollback and evidence gaps. Confirmed defects return to implementation when edits are authorized, with at most three review-and-fix rounds. Owner authorization remains required for external actions.</desc>
   <defs>
     <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#101426" />
@@ -9,7 +9,7 @@
   </defs>
   <rect x="0" y="0" width="880" height="760" fill="url(#background)" />
   <text x="44" y="60" font-family="Arial,Helvetica,sans-serif" font-size="34" font-weight="700" fill="#f7f8ff">From a diff to a reviewable handoff</text>
-  <text x="44" y="103" font-family="Arial,Helvetica,sans-serif" font-size="26" font-weight="400" fill="#cbd4eb">Verify the implemented revision.</text>
+  <text x="44" y="103" font-family="Arial,Helvetica,sans-serif" font-size="26" font-weight="400" fill="#cbd4eb">Compare with the baseline when applicable.</text>
   <rect x="44" y="155" width="220" height="225" fill="#193439" id="implement" stroke="#71dbce" stroke-width="1.5" />
   <rect x="330" y="155" width="220" height="225" fill="#243148" id="verify" stroke="#85cafa" stroke-width="1.5" />
   <rect x="616" y="155" width="220" height="225" fill="#222441" id="handoff" stroke="#a992ff" stroke-width="1.5" />
@@ -18,13 +18,15 @@
   <text x="64" y="287" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="400" fill="#cbd4eb">Changed flows</text>
   <text x="64" y="324" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="400" fill="#cbd4eb">Decisions</text>
   <text x="350" y="201" font-family="Arial,Helvetica,sans-serif" font-size="31" font-weight="700" fill="#9bcfff">Verify</text>
-  <text x="350" y="250" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="400" fill="#cbd4eb">Repo checks</text>
-  <text x="350" y="287" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="400" fill="#cbd4eb">Real behavior</text>
-  <text x="350" y="324" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="400" fill="#cbd4eb">Review findings</text>
+  <text x="350" y="244" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="400" fill="#cbd4eb">Real behavior</text>
+  <text x="350" y="276" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="400" fill="#cbd4eb">Same checks</text>
+  <text x="350" y="308" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="400" fill="#cbd4eb">Compare revisions</text>
+  <text x="350" y="340" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="400" fill="#cbd4eb">Review findings</text>
   <text x="636" y="201" font-family="Arial,Helvetica,sans-serif" font-size="31" font-weight="700" fill="#f7f8ff">Handoff</text>
-  <text x="636" y="250" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="400" fill="#cbd4eb">Revision + results</text>
-  <text x="636" y="287" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="400" fill="#cbd4eb">Flows + artifacts</text>
-  <text x="636" y="324" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="400" fill="#cbd4eb">Risks + rollback</text>
+  <text x="636" y="244" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="400" fill="#cbd4eb">By criterion</text>
+  <text x="636" y="276" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="400" fill="#cbd4eb">Diff and run links</text>
+  <text x="636" y="308" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="400" fill="#cbd4eb">Risks + gaps</text>
+  <text x="636" y="340" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="400" fill="#cbd4eb">Rollback</text>
   <g id="implement-verify">
     <polyline points="264,270 318,270" fill="none" stroke="#85cafa" stroke-width="2.5" stroke-linejoin="round" />
     <polygon points="330,270 318,275 318,265" fill="#85cafa" />

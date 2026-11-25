@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-labelledby="title description">
-  <title id="title">Verified delivery: establish, verify, review, release</title>
-  <desc id="description">A four-step engineering verification loop that turns an implemented change into evidence-backed, review-ready delivery.</desc>
+  <title id="title">Verified delivery: establish, verify, review, handoff</title>
+  <desc id="description">Establish requirements and risk. Verify real behavior and compare the baseline with the candidate when applicable. Review findings, then link each criterion to evidence and call out gaps.</desc>
   <defs>
     <linearGradient id="background" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#101426"/><stop offset="100%" stop-color="#080c18"/></linearGradient>
     <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#65dfd6"/><stop offset="50%" stop-color="#85cafa"/><stop offset="100%" stop-color="#a786ff"/></linearGradient>
@@ -21,8 +21,8 @@
   </g>
   <g><circle cx="98" cy="304" r="20" fill="#81e1d2"/><circle cx="375" cy="304" r="20" fill="#8fcbff"/><circle cx="652" cy="304" r="20" fill="#a992ff"/><circle cx="929" cy="304" r="20" fill="#ffabcb"/></g>
   <g fill="#151827" font-family="Arial,Helvetica,sans-serif" font-weight="800" font-size="20" text-anchor="middle"><text x="98" y="311">1</text><text x="375" y="311">2</text><text x="652" y="311">3</text><text x="929" y="311">4</text></g>
-  <g fill="#ffffff" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="800"><text x="83" y="376">ESTABLISH</text><text x="360" y="376">VERIFY</text><text x="637" y="376">REVIEW</text><text x="914" y="376">RELEASE</text></g>
-  <g fill="#dce2f0" font-family="Arial,Helvetica,sans-serif" font-size="18"><text x="83" y="417">Requirements</text><text x="83" y="445">Risk</text><text x="360" y="417">Real paths</text><text x="360" y="445">Evidence</text><text x="637" y="417">Findings</text><text x="637" y="445">Convergence</text><text x="914" y="417">Rollback</text><text x="914" y="445">Approval</text></g>
+  <g fill="#ffffff" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="800"><text x="83" y="376">ESTABLISH</text><text x="360" y="376">VERIFY</text><text x="637" y="376">REVIEW</text><text x="914" y="376">HANDOFF</text></g>
+  <g fill="#dce2f0" font-family="Arial,Helvetica,sans-serif" font-size="18"><text x="83" y="417">Requirements</text><text x="83" y="445">Risk</text><text x="360" y="417">Real behavior</text><text x="360" y="445">Baseline comparison</text><text x="637" y="417">Findings</text><text x="637" y="445">Convergence</text><text x="914" y="417">Evidence by criterion</text><text x="914" y="445">Risks and gaps</text></g>
   <g fill="none" stroke="#d4dcf3" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M315 380h17m-7-7 7 7-7 7"/><path d="M592 380h17m-7-7 7 7-7 7"/><path d="M869 380h17m-7-7 7 7-7 7"/></g>
   <path d="M1018 517 Q603 568 184 517" fill="none" stroke="url(#edge)" stroke-width="3" stroke-dasharray="9 9" stroke-linecap="round"/>
   <text x="602" y="558" text-anchor="middle" fill="#c9d2e7" font-size="17" font-family="Arial,Helvetica,sans-serif" letter-spacing="2.6" font-weight="700">VERIFY · REVIEW · LEARN</text>

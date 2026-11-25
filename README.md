@@ -63,7 +63,7 @@ The coordinator is optional: use an individual skill whenever its narrower scope
 
 ## From a diff to a reviewable handoff
 
-![Delivery evidence: verify the implemented revision, return confirmed defects to implementation for at most three review-and-fix rounds, and hand off the exact revision, command results, flow evidence, risks and rollback. Code changes require fresh affected checks. Owner authorization is required for external actions.](docs/assets/end-to-end-execution.svg)
+![Verify the implemented revision and compare it with the baseline using the same checks when applicable. Hand off evidence by acceptance criterion with diff and run links, risks, and gaps. Return confirmed defects to implementation for up to three review-and-fix rounds. External actions require owner authorization.](docs/assets/end-to-end-execution.svg)
 
 `verified-delivery` checks the implemented change and records what the evidence supports. A confirmed defect returns to implementation when edits are authorized. Missing evidence remains explicit; a verdict does not authorize commit, push, merge or deployment.
 

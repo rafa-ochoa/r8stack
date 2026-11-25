@@ -17,7 +17,7 @@
 
 The catalog includes an opt-in comparison runner for fixed, repeated evaluation observations. Provider-specific agents are intentionally not automated or enabled: an adapter must preserve complete transcripts, fixtures, and settings before it can supply trusted observations to the runner.
 
-![Execution flow](assets/end-to-end-execution.svg)
+![Delivery flow showing comparable checks, evidence by acceptance criterion, and the review-and-fix loop](assets/end-to-end-execution.svg)
 
 ![Learning loop](assets/learning-loop.svg)
 

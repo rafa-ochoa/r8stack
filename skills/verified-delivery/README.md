@@ -1,6 +1,6 @@
 # Verified delivery
 
-![Verified delivery: Establish, Verify, Review, Release](cover.svg)
+![Verified delivery workflow from requirements and risk through baseline comparison, review, and an evidence handoff by criterion](cover.svg)
 
 **Prove a change works before asking someone to merge it.**
 
@@ -13,9 +13,9 @@ It complements [Judgment-led delivery](../judgment-led-delivery/README.md): use 
 | Stage | Agent focus |
 | --- | --- |
 | Establish | Map requirements, changed paths, regressions, and risk. |
-| Verify | Run real, relevant checks and record their exact scope and result. |
+| Verify | Run relevant checks through real behavior. Compare the baseline and candidate using the same checks when applicable. |
 | Review | Validate independent findings, fix only justified issues, and stop after at most three rounds. |
-| Prepare | Describe risk, rollback readiness, regression guards, and the approval needed. |
+| Handoff | Link each material criterion to the relevant diff and evidence. Record gaps, risks, rollback readiness, and any approval needed. |
 
 The workflow is risk-sensitive, not a mandatory ceremony. Routine low-risk edits stay lightweight. Sensitive data, permissions, payments, migrations, destructive operations, and hard-to-reverse deployments get deeper verification and explicit human approval before merge.
 
