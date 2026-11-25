@@ -36,7 +36,7 @@ Run applicable checks through the real changed paths. Prefer existing tests and 
 - Check behavior and its relevant failure, recovery, permission, data-integrity, and compatibility paths.
 - Run the repository's relevant format, lint, type, test, build, migration, and end-to-end checks. Use a real browser or realistic input where the feature depends on them.
 - Inspect security and privacy boundaries: authorization, untrusted input, secret exposure, logging, retention, and least-privilege changes.
-- Record the command or action, result, scope, and limitations. Use [verification evidence](references/verification-evidence.md) for substantial changes.
+- Record the command or action, result, scope, and limitations. For material behavior-preserving changes and performance claims, compare a trusted baseline with the candidate using fixed checks and comparable conditions. Use [verification evidence](references/verification-evidence.md) to handle changed checks, failures, and gaps.
 
 Resolve failed checks before a readiness verdict unless they are demonstrably unrelated and explicitly disclosed. Do not hide failures through filtered output or by changing tests to match broken behavior.
 
@@ -84,7 +84,7 @@ Then give only the information needed to act:
 4. Risk level, rollback/containment readiness, and any required approval.
 5. Regression coverage added or missing, plus the next action only if needed.
 
-Use [PR readiness](references/pr-readiness.md) when preparing a pull request or handoff. Keep the description concrete enough for a reviewer to understand impact without rereading every file.
+Use [PR readiness](references/pr-readiness.md) when preparing a pull request or handoff. For material changes, organize the handoff by acceptance criterion or user-visible behavior. Link each claim to the relevant diff and evidence and surface what still needs human verification.
 
 ## Red flags
 
